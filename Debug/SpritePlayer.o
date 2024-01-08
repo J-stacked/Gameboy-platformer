@@ -1,0 +1,445 @@
+;!FILE ../Debug/SpritePlayer.asm
+XL3
+H A areas 102 global symbols
+M SpritePlayer
+O -msm83
+S _TranslateSprite Ref000000
+S _SetSpriteAnim Ref000000
+S _THIS Ref000000
+S _keys Ref000000
+S .__.ABS. Def000000
+S ___bank_SpritePlayer Def0000FF
+S __divsint Ref000000
+S G$__bank_SpritePlayer$0_0$0 Def0000FF
+A _CODE size 0 flags 0 addr 0
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 3 flags 0 addr 0
+S G$x_vel$0_0$0 Def000000
+S G$y_vel$0_0$0 Def000001
+S _airborne Def000002
+S G$airborne$0_0$0 Def000002
+S _x_vel Def000000
+S _y_vel Def000001
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _CODE_255 size 161 flags 0 addr 0
+S A$SpritePlayer$300 Def0000DF
+S A$SpritePlayer$210 Def000073
+S G$Destroy_SpritePlayer$0$0 Def000160
+S A$SpritePlayer$310 Def0000EB
+S A$SpritePlayer$301 Def0000E1
+S A$SpritePlayer$211 Def000074
+S A$SpritePlayer$121 Def00000D
+S _anim_idle Def000001
+S A$SpritePlayer$320 Def0000F6
+S A$SpritePlayer$311 Def0000EE
+S A$SpritePlayer$302 Def0000E4
+S A$SpritePlayer$230 Def000086
+S A$SpritePlayer$212 Def000075
+S A$SpritePlayer$140 Def000025
+S A$SpritePlayer$122 Def000010
+S C$SpritePlayer.c$20$0_0$162 Def000000
+S A$SpritePlayer$330 Def000105
+S A$SpritePlayer$321 Def0000F7
+S A$SpritePlayer$231 Def000087
+S A$SpritePlayer$204 Def000068
+S A$SpritePlayer$132 Def000018
+S A$SpritePlayer$123 Def000012
+S A$SpritePlayer$403 Def00015F
+S A$SpritePlayer$340 Def000113
+S A$SpritePlayer$331 Def000107
+S A$SpritePlayer$322 Def0000F8
+S A$SpritePlayer$241 Def000093
+S A$SpritePlayer$232 Def00008A
+S A$SpritePlayer$223 Def00007E
+S A$SpritePlayer$205 Def00006A
+S A$SpritePlayer$160 Def00003A
+S A$SpritePlayer$151 Def00002F
+S A$SpritePlayer$133 Def00001A
+S G$anim_idle$0_0$0 Def000001
+S A$SpritePlayer$350 Def00011E
+S A$SpritePlayer$341 Def000116
+S A$SpritePlayer$332 Def000109
+S A$SpritePlayer$323 Def0000F9
+S A$SpritePlayer$260 Def0000AE
+S A$SpritePlayer$251 Def00009E
+S A$SpritePlayer$242 Def000096
+S A$SpritePlayer$233 Def00008D
+S A$SpritePlayer$224 Def000081
+S A$SpritePlayer$206 Def00006B
+S A$SpritePlayer$170 Def000046
+S A$SpritePlayer$161 Def00003D
+S A$SpritePlayer$152 Def000032
+S A$SpritePlayer$134 Def00001B
+S A$SpritePlayer$116 Def00000B
+S C$SpritePlayer.c$22$0_0$163 Def00000B
+S _Update_SpritePlayer Def00000B
+S A$SpritePlayer$351 Def000120
+S A$SpritePlayer$333 Def00010A
+S A$SpritePlayer$324 Def0000FB
+S A$SpritePlayer$261 Def0000AF
+S A$SpritePlayer$252 Def0000A1
+S A$SpritePlayer$243 Def000097
+S A$SpritePlayer$234 Def00008E
+S A$SpritePlayer$207 Def00006C
+S A$SpritePlayer$180 Def00004E
+S A$SpritePlayer$171 Def000048
+S A$SpritePlayer$162 Def00003E
+S A$SpritePlayer$135 Def00001C
+S A$SpritePlayer$117 Def00000C
+S C$SpritePlayer.c$31$1_0$163 Def000043
+S A$SpritePlayer$361 Def00012F
+S A$SpritePlayer$352 Def000121
+S A$SpritePlayer$325 Def0000FC
+S A$SpritePlayer$316 Def0000EF
+S A$SpritePlayer$307 Def0000E5
+S A$SpritePlayer$253 Def0000A2
+S A$SpritePlayer$244 Def000099
+S A$SpritePlayer$235 Def00008F
+S A$SpritePlayer$217 Def000078
+S A$SpritePlayer$208 Def00006F
+S A$SpritePlayer$181 Def000050
+S A$SpritePlayer$163 Def00003F
+S A$SpritePlayer$145 Def000028
+S A$SpritePlayer$136 Def00001F
+S A$SpritePlayer$127 Def000014
+S C$SpritePlayer.c$50$1_0$163 Def0000EF
+S C$SpritePlayer.c$23$1_0$163 Def00000D
+S A$SpritePlayer$380 Def000149
+S A$SpritePlayer$362 Def000131
+S A$SpritePlayer$353 Def000123
+S A$SpritePlayer$335 Def00010C
+S A$SpritePlayer$326 Def0000FE
+S A$SpritePlayer$317 Def0000F2
+S A$SpritePlayer$308 Def0000E8
+S A$SpritePlayer$290 Def0000D1
+S A$SpritePlayer$263 Def0000B1
+S A$SpritePlayer$254 Def0000A4
+S A$SpritePlayer$245 Def00009B
+S A$SpritePlayer$236 Def000090
+S A$SpritePlayer$218 Def00007B
+S A$SpritePlayer$209 Def000072
+S A$SpritePlayer$182 Def000051
+S A$SpritePlayer$164 Def000040
+S A$SpritePlayer$146 Def00002B
+S A$SpritePlayer$137 Def000022
+S A$SpritePlayer$128 Def000017
+S C$SpritePlayer.c$51$1_0$163 Def000118
+S A$SpritePlayer$417 Def000160
+S A$SpritePlayer$390 Def000155
+S A$SpritePlayer$381 Def00014A
+S A$SpritePlayer$372 Def00013B
+S A$SpritePlayer$363 Def000133
+S A$SpritePlayer$354 Def000124
+S A$SpritePlayer$336 Def00010E
+S A$SpritePlayer$327 Def0000FF
+S A$SpritePlayer$318 Def0000F4
+S A$SpritePlayer$309 Def0000E9
+S A$SpritePlayer$291 Def0000D3
+S A$SpritePlayer$264 Def0000B3
+S A$SpritePlayer$255 Def0000A5
+S A$SpritePlayer$246 Def00009D
+S A$SpritePlayer$228 Def000083
+S A$SpritePlayer$219 Def00007C
+S A$SpritePlayer$183 Def000052
+S A$SpritePlayer$156 Def000033
+S A$SpritePlayer$147 Def00002D
+S A$SpritePlayer$138 Def000023
+S C$SpritePlayer.c$18$0_0$162 Def000000
+S A$SpritePlayer$391 Def000158
+S A$SpritePlayer$373 Def00013E
+S A$SpritePlayer$355 Def000126
+S A$SpritePlayer$346 Def000118
+S A$SpritePlayer$337 Def000110
+S A$SpritePlayer$328 Def000101
+S A$SpritePlayer$319 Def0000F5
+S A$SpritePlayer$292 Def0000D5
+S A$SpritePlayer$274 Def0000BC
+S A$SpritePlayer$265 Def0000B5
+S A$SpritePlayer$256 Def0000A6
+S A$SpritePlayer$229 Def000085
+S A$SpritePlayer$193 Def00005E
+S A$SpritePlayer$184 Def000055
+S A$SpritePlayer$175 Def00004A
+S A$SpritePlayer$157 Def000035
+S A$SpritePlayer$139 Def000024
+S C$SpritePlayer.c$53$1_0$163 Def00013B
+S C$SpritePlayer.c$44$1_0$163 Def000093
+S C$SpritePlayer.c$35$1_0$163 Def00005E
+S C$SpritePlayer.c$24$2_0$164 Def000014
+S A$SpritePlayer$392 Def000159
+S A$SpritePlayer$374 Def00013F
+S A$SpritePlayer$365 Def000134
+S A$SpritePlayer$356 Def000128
+S A$SpritePlayer$347 Def00011A
+S A$SpritePlayer$329 Def000103
+S A$SpritePlayer$293 Def0000D7
+S A$SpritePlayer$284 Def0000C7
+S A$SpritePlayer$275 Def0000BF
+S A$SpritePlayer$257 Def0000A8
+S A$SpritePlayer$194 Def000061
+S A$SpritePlayer$185 Def000058
+S A$SpritePlayer$176 Def00004D
+S A$SpritePlayer$158 Def000036
+S C$SpritePlayer.c$54$1_0$163 Def00015F
+S C$SpritePlayer.c$45$1_0$163 Def00009E
+S C$SpritePlayer.c$32$2_0$166 Def00004A
+S C$SpritePlayer.c$27$1_0$163 Def000028
+S C$SpritePlayer.c$25$2_0$164 Def000018
+S A$SpritePlayer$393 Def00015A
+S A$SpritePlayer$384 Def00014B
+S A$SpritePlayer$375 Def000140
+S A$SpritePlayer$366 Def000136
+S A$SpritePlayer$357 Def00012A
+S A$SpritePlayer$348 Def00011C
+S A$SpritePlayer$339 Def000111
+S A$SpritePlayer$294 Def0000D8
+S A$SpritePlayer$285 Def0000CA
+S A$SpritePlayer$276 Def0000C0
+S A$SpritePlayer$267 Def0000B6
+S A$SpritePlayer$258 Def0000AA
+S A$SpritePlayer$195 Def000062
+S A$SpritePlayer$186 Def000059
+S A$SpritePlayer$159 Def000037
+S C$SpritePlayer.c$46$1_0$163 Def0000BC
+S C$SpritePlayer.c$40$2_0$168 Def00007E
+S C$SpritePlayer.c$33$2_0$166 Def00004E
+S _Destroy_SpritePlayer Def000160
+S A$SpritePlayer$385 Def00014C
+S A$SpritePlayer$376 Def000143
+S A$SpritePlayer$367 Def000139
+S A$SpritePlayer$358 Def00012C
+S A$SpritePlayer$349 Def00011D
+S A$SpritePlayer$286 Def0000CB
+S A$SpritePlayer$277 Def0000C2
+S A$SpritePlayer$268 Def0000B8
+S A$SpritePlayer$259 Def0000AC
+S A$SpritePlayer$187 Def00005A
+S A$SpritePlayer$169 Def000043
+S C$SpritePlayer.c$47$1_0$163 Def0000C7
+S C$SpritePlayer.c$41$2_0$168 Def000083
+S A$SpritePlayer$386 Def00014F
+S A$SpritePlayer$377 Def000144
+S A$SpritePlayer$359 Def00012D
+S A$SpritePlayer$296 Def0000DA
+S A$SpritePlayer$287 Def0000CD
+S A$SpritePlayer$278 Def0000C4
+S A$SpritePlayer$269 Def0000BB
+S A$SpritePlayer$188 Def00005B
+S C$SpritePlayer.c$39$1_0$163 Def000078
+S A$SpritePlayer$387 Def000150
+S A$SpritePlayer$378 Def000147
+S A$SpritePlayer$297 Def0000DC
+S A$SpritePlayer$288 Def0000CE
+S A$SpritePlayer$279 Def0000C6
+S C$SpritePlayer.c$49$1_0$163 Def0000E5
+S C$SpritePlayer.c$28$2_0$165 Def00002F
+S A$SpritePlayer$397 Def00015B
+S A$SpritePlayer$388 Def000153
+S A$SpritePlayer$379 Def000148
+S A$SpritePlayer$298 Def0000DE
+S A$SpritePlayer$289 Def0000CF
+S A$SpritePlayer$199 Def000064
+S C$SpritePlayer.c$36$2_0$167 Def000064
+S C$SpritePlayer.c$29$2_0$165 Def000033
+S A$SpritePlayer$398 Def00015E
+S A$SpritePlayer$389 Def000154
+S XG$Update_SpritePlayer$0$0 Def00015F
+S C$SpritePlayer.c$37$2_0$167 Def000068
+S C$SpritePlayer.c$56$1_0$177 Def000160
+S _anim_walk Def000004
+S G$anim_walk$0_0$0 Def000004
+S A$SpritePlayer$82 Def000000
+S XG$Destroy_SpritePlayer$0$0 Def000160
+S _min_x_vel Def000009
+S _min_y_vel Def00000A
+S _max_x_vel Def000007
+S G$min_x_vel$0_0$0 Def000009
+S _max_y_vel Def000008
+S G$min_y_vel$0_0$0 Def00000A
+S G$Start_SpritePlayer$0$0 Def000000
+S G$max_x_vel$0_0$0 Def000007
+S G$max_y_vel$0_0$0 Def000008
+S _Start_SpritePlayer Def000000
+S G$Update_SpritePlayer$0$0 Def00000B
+S XG$Start_SpritePlayer$0$0 Def000000
+S A$SpritePlayer$200 Def000067
+A _INITIALIZER size 3 flags 0 addr 0
+S FSpritePlayer$__xinit_airborne$0_0$0 Def000002
+S FSpritePlayer$__xinit_x_vel$0_0$0 Def000000
+S FSpritePlayer$__xinit_y_vel$0_0$0 Def000001
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 02 00
+T 00 00 00
+R 00 00 02 00
+T 01 00 00
+R 00 00 02 00
+T 01 00 00
+R 00 00 02 00
+T 02 00 00
+R 00 00 02 00
+T 02 00 00
+R 00 00 02 00
+T 00 00 00
+R 00 00 07 00
+T 00 00 00 C9
+R 00 00 07 00
+T 01 00 00
+R 00 00 07 00
+T 01 00 00 02 00 01
+R 00 00 07 00
+T 04 00 00
+R 00 00 07 00
+T 04 00 00 02 00 02
+R 00 00 07 00
+T 07 00 00
+R 00 00 07 00
+T 07 00 00 0A
+R 00 00 07 00
+T 08 00 00
+R 00 00 07 00
+T 08 00 00 0A
+R 00 00 07 00
+T 09 00 00
+R 00 00 07 00
+T 09 00 00 F6
+R 00 00 07 00
+T 0A 00 00
+R 00 00 07 00
+T 0A 00 00 F6
+R 00 00 07 00
+T 0B 00 00
+R 00 00 07 00
+T 0B 00 00 3B 3B FA 00 00 CB 57 28 14 21 01 00 35
+R 00 00 07 00 02 06 03 00 00 0D 02 00
+T 18 00 00 3E 0F F5 33 01 04 00 21 00 00 2A 5F 56
+R 00 00 07 00 00 08 07 00 02 0B 02 00
+T 25 00 00 CD 00 00
+R 00 00 07 00 02 04 01 00
+T 28 00 00
+R 00 00 07 00
+T 28 00 00 FA 00 00 CB 5F 28 14 21 01 00 34 3E 0F
+R 00 00 07 00 02 04 03 00 00 0B 02 00
+T 35 00 00 F5 33 01 04 00 21 00 00 2A 5F 56 CD
+R 00 00 07 00 00 06 07 00 02 09 02 00
+T 41 00 00 00 00
+R 00 00 07 00 02 03 01 00
+T 43 00 00
+R 00 00 07 00
+T 43 00 00 FA 00 00 CB 4F 28 14 21 00 00 35 3E 0F
+R 00 00 07 00 02 04 03 00 00 0B 02 00
+T 50 00 00 F5 33 01 04 00 21 00 00 2A 5F 56 CD
+R 00 00 07 00 00 06 07 00 02 09 02 00
+T 5C 00 00 00 00
+R 00 00 07 00 02 03 01 00
+T 5E 00 00
+R 00 00 07 00
+T 5E 00 00 FA 00 00 0F 30 14 21 00 00 34 3E 0F F5
+R 00 00 07 00 02 04 03 00 00 0A 02 00
+T 6B 00 00 33 01 04 00 21 00 00 2A 5F 56 CD 00 00
+R 00 00 07 00 00 05 07 00 02 08 02 00 02 0E 01 00
+T 78 00 00
+R 00 00 07 00
+T 78 00 00 FA 00 00 B7 20 15 21 00 00 36 00 3E 0F
+R 00 00 07 00 02 04 03 00 00 0A 02 00
+T 85 00 00 F5 33 01 01 00 21 00 00 2A 5F 56 CD
+R 00 00 07 00 00 06 07 00 02 09 02 00
+T 91 00 00 00 00
+R 00 00 07 00 02 03 01 00
+T 93 00 00
+R 00 00 07 00
+T 93 00 00 21 00 00 7E EE 80 D6 76 30 01 34
+R 00 00 07 00 00 04 02 00
+T 9E 00 00
+R 00 00 07 00
+T 9E 00 00 21 00 00 5E 3E 0A 57 96 CB 7B 28 07 CB
+R 00 00 07 00 00 04 02 00
+T AB 00 00 7A 20 08 BF 18 05
+R 00 00 07 00
+T B1 00 00
+R 00 00 07 00
+T B1 00 00 CB 7A 28 01 37
+R 00 00 07 00
+T B6 00 00
+R 00 00 07 00
+T B6 00 00 30 04 21 00 00 35
+R 00 00 07 00 00 06 02 00
+T BC 00 00
+R 00 00 07 00
+T BC 00 00 21 01 00 7E EE 80 D6 76 30 01 34
+R 00 00 07 00 00 04 02 00
+T C7 00 00
+R 00 00 07 00
+T C7 00 00 21 01 00 5E 3E 0A 57 96 CB 7B 28 07 CB
+R 00 00 07 00 00 04 02 00
+T D4 00 00 7A 20 08 BF 18 05
+R 00 00 07 00
+T DA 00 00
+R 00 00 07 00
+T DA 00 00 CB 7A 28 01 37
+R 00 00 07 00
+T DF 00 00
+R 00 00 07 00
+T DF 00 00 30 04 21 01 00 35
+R 00 00 07 00 00 06 02 00
+T E5 00 00
+R 00 00 07 00
+T E5 00 00 FA 02 00 B7 28 04 21 01 00 34
+R 00 00 07 00 00 04 02 00 00 0A 02 00
+T EF 00 00
+R 00 00 07 00
+T EF 00 00 FA 01 00 F8 00 22 07 9F 32 2A D6 F8 7E
+R 00 00 07 00 00 04 02 00
+T FC 00 00 DE FF 56 3E FF CB 7F 28 07 CB 7A 20 08
+R 00 00 07 00
+T 09 01 00 BF 18 05
+R 00 00 07 00
+T 0C 01 00
+R 00 00 07 00
+T 0C 01 00 CB 7A 28 01 37
+R 00 00 07 00
+T 11 01 00
+R 00 00 07 00
+T 11 01 00 30 05 21 02 00 36 01
+R 00 00 07 00 00 06 02 00
+T 18 01 00
+R 00 00 07 00
+T 18 01 00 F8 00 3E 08 96 23 3E 00 9E 3E 00 57 CB
+R 00 00 07 00
+T 25 01 00 7E 28 07 CB 7A 20 08 BF 18 05
+R 00 00 07 00
+T 2F 01 00
+R 00 00 07 00
+T 2F 01 00 CB 7A 28 01 37
+R 00 00 07 00
+T 34 01 00
+R 00 00 07 00
+T 34 01 00 30 05 21 02 00 36 00
+R 00 00 07 00 00 06 02 00
+T 3B 01 00
+R 00 00 07 00
+T 3B 01 00 01 05 00 D1 D5 CD 00 00 51 FA 00 00 5F
+R 00 00 07 00 02 09 06 00 00 0D 02 00
+T 48 01 00 07 9F 6F D5 01 05 00 55 CD 00 00 33 79
+R 00 00 07 00 02 0C 06 00
+T 55 01 00 21 00 00 5E 23 56 CD 00 00 E1 C9
+R 00 00 07 00 02 04 02 00 02 0A 00 00
+T 60 01 00
+R 00 00 07 00
+T 60 01 00 C9
+R 00 00 07 00
+T 00 00 00
+R 00 00 08 00
+T 00 00 00 00
+R 00 00 08 00
+T 01 00 00
+R 00 00 08 00
+T 01 00 00 00
+R 00 00 08 00
+T 02 00 00
+R 00 00 08 00
+T 02 00 00 00
+R 00 00 08 00

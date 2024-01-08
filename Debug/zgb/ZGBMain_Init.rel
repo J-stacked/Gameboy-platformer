@@ -1,0 +1,160 @@
+;!FILE ../Debug/zgb/ZGBMain_Init.asm
+XL3
+H A areas 4F global symbols
+M ZGBMain_Init
+O -msm83
+S _Update_SpritePlayer Ref000000
+S _Start_StateGame Ref000000
+S _Destroy_SpritePlayer Ref000000
+S ___bank_StateGame Ref000000
+S _Update_StateGame Ref000000
+S .__.ABS. Def000000
+S ___bank_player Ref000000
+S _player Ref000000
+S _Start_SpritePlayer Ref000000
+S ___bank_SpritePlayer Ref000000
+A _CODE size 0 flags 0 addr 0
+A _DATA size 11 flags 0 addr 0
+S _spriteStartFuncs Def000007
+S G$spriteStartFuncs$0_0$0 Def000007
+S _startFuncs Def000001
+S _spriteIdxs Def00000F
+S G$startFuncs$0_0$0 Def000001
+S G$spriteIdxs$0_0$0 Def00000F
+S _spriteUpdateFuncs Def000009
+S G$spriteUpdateFuncs$0_0$0 Def000009
+S _spriteDataBanks Def000006
+S _spriteDestroyFuncs Def00000B
+S _updateFuncs Def000003
+S G$spriteDestroyFuncs$0_0$0 Def00000B
+S G$spriteDataBanks$0_0$0 Def000006
+S _spriteDatas Def00000D
+S G$updateFuncs$0_0$0 Def000003
+S _spriteBanks Def000005
+S G$spriteDatas$0_0$0 Def00000D
+S G$spriteBanks$0_0$0 Def000005
+S _spritePalsOffset Def000010
+S _stateBanks Def000000
+S G$spritePalsOffset$0_0$0 Def000010
+S G$stateBanks$0_0$0 Def000000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _CODE_1 size 44 flags 0 addr 0
+S A$ZGBMain_Init$165 Def000043
+S A$ZGBMain_Init$156 Def000040
+S A$ZGBMain_Init$147 Def00002D
+S A$ZGBMain_Init$138 Def00001C
+S A$ZGBMain_Init$157 Def000041
+S A$ZGBMain_Init$148 Def000030
+S A$ZGBMain_Init$139 Def00001D
+S A$ZGBMain_Init$149 Def000032
+S C$ZGBMain_Init.c$50$1_0$159 Def000017
+S C$ZGBMain_Init.c$16$0_0$158 Def000000
+S C$ZGBMain_Init.c$51$1_0$159 Def000043
+S C$ZGBMain_Init.c$17$1_0$158 Def000000
+S C$ZGBMain_Init.c$18$1_0$158 Def000016
+S C$ZGBMain_Init.c$49$1_0$159 Def000017
+S G$InitSprites$0$0 Def000017
+S G$InitStates$0$0 Def000000
+S _InitSprites Def000017
+S _InitStates Def000000
+S XG$InitSprites$0$0 Def000043
+S XG$InitStates$0$0 Def000016
+S A$ZGBMain_Init$110 Def00000B
+S A$ZGBMain_Init$111 Def00000D
+S A$ZGBMain_Init$112 Def00000E
+S A$ZGBMain_Init$140 Def000020
+S A$ZGBMain_Init$113 Def000010
+S A$ZGBMain_Init$150 Def000033
+S A$ZGBMain_Init$141 Def000022
+S A$ZGBMain_Init$123 Def000016
+S A$ZGBMain_Init$114 Def000013
+S A$ZGBMain_Init$105 Def000000
+S A$ZGBMain_Init$151 Def000035
+S A$ZGBMain_Init$142 Def000023
+S A$ZGBMain_Init$115 Def000015
+S A$ZGBMain_Init$106 Def000003
+S A$ZGBMain_Init$152 Def000038
+S A$ZGBMain_Init$143 Def000025
+S A$ZGBMain_Init$107 Def000005
+S A$ZGBMain_Init$153 Def00003A
+S A$ZGBMain_Init$144 Def000028
+S A$ZGBMain_Init$108 Def000006
+S A$ZGBMain_Init$154 Def00003B
+S A$ZGBMain_Init$145 Def00002A
+S A$ZGBMain_Init$136 Def000017
+S A$ZGBMain_Init$109 Def000008
+S A$ZGBMain_Init$155 Def00003E
+S A$ZGBMain_Init$146 Def00002B
+S A$ZGBMain_Init$137 Def00001A
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 01 00
+T 01 00 00
+R 00 00 01 00
+T 01 00 00
+R 00 00 01 00
+T 03 00 00
+R 00 00 01 00
+T 03 00 00
+R 00 00 01 00
+T 05 00 00
+R 00 00 01 00
+T 05 00 00
+R 00 00 01 00
+T 06 00 00
+R 00 00 01 00
+T 06 00 00
+R 00 00 01 00
+T 07 00 00
+R 00 00 01 00
+T 07 00 00
+R 00 00 01 00
+T 09 00 00
+R 00 00 01 00
+T 09 00 00
+R 00 00 01 00
+T 0B 00 00
+R 00 00 01 00
+T 0B 00 00
+R 00 00 01 00
+T 0D 00 00
+R 00 00 01 00
+T 0D 00 00
+R 00 00 01 00
+T 0F 00 00
+R 00 00 01 00
+T 0F 00 00
+R 00 00 01 00
+T 10 00 00
+R 00 00 01 00
+T 10 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 07 00
+T 00 00 00 21 01 00 36 00 00 00 23 36 00 00 00 21
+R 00 00 07 00 00 04 01 00 0B 07 01 00 8B 0C 01 00
+T 09 00 00 03 00 36 00 00 00 23 36 00 00 00 01
+R 00 00 07 00 00 03 01 00 0B 06 04 00 8B 0B 04 00
+T 11 00 00 00 00 3E 00 00 00 02 C9
+R 00 00 07 00 00 03 01 00 0B 06 03 00
+T 17 00 00
+R 00 00 07 00
+T 17 00 00 01 05 00 3E 00 00 00 02 21 07 00 36
+R 00 00 07 00 00 04 01 00 0B 07 09 00 00 0C 01 00
+T 21 00 00 00 00 00 23 36 00 00 00 21 09 00 36
+R 00 00 07 00 0B 03 08 00 8B 08 08 00 00 0C 01 00
+T 29 00 00 00 00 00 23 36 00 00 00 21 0B 00 36
+R 00 00 07 00 0B 03 00 00 8B 08 00 00 00 0C 01 00
+T 31 00 00 00 00 00 23 36 00 00 00 01 06 00 3E
+R 00 00 07 00 0B 03 02 00 8B 08 02 00 00 0C 01 00
+T 39 00 00 00 00 00 02 21 0D 00 36 00 00 00 23 36
+R 00 00 07 00 0B 03 06 00 00 08 01 00 0B 0B 07 00
+T 42 00 00 00 00 00 C9
+R 00 00 07 00 8B 03 07 00

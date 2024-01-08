@@ -1,0 +1,45 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 1
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  002710 L
+    .__.ABS.                                                    =  000000 G
+    .__.CPU.                                                    =  000000 L
+    .__.H$L.                                                    =  000000 L
+  0 _ClearOAMs                                                     00009E GR
+  0 _SwapOAMs                                                      000000 GR
+    ___render_shadow_OAM                                           ****** GX
+    __shadow_OAM_base                                              ****** GX
+  7 __xinit__next_oam_idx                                          000000 R
+  7 __xinit__oam                                                   000001 R
+  7 __xinit__oam0                                                  000003 R
+  7 __xinit__oam1                                                  000005 R
+  7 __xinit__oam_end                                               000007 R
+    _memset                                                        ****** GX
+  2 _next_oam_idx                                                  000000 GR
+  2 _oam                                                           000001 GR
+  2 _oam0                                                          000003 GR
+  2 _oam1                                                          000005 GR
+  2 _oam_end                                                       000007 GR
+    _oam_mirror                                                 =  00DF00 G
+    _scroll_x                                                      ****** GX
+    _scroll_x_vblank                                               ****** GX
+    _scroll_y                                                      ****** GX
+    _scroll_y_vblank                                               ****** GX
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 2
+Hexadecimal [24-Bits]
+
+Area Table
+
+   0 _CODE                                      size     D5   flags    0
+   1 _DATA                                      size      0   flags    0
+   2 _INITIALIZED                               size      9   flags    0
+   3 _DABS                                      size      0   flags    8
+   4 _HOME                                      size      0   flags    0
+   5 _GSINIT                                    size      0   flags    0
+   6 _GSFINAL                                   size      0   flags    0
+   7 _INITIALIZER                               size      9   flags    0
+   8 _CABS                                      size      0   flags    8
+

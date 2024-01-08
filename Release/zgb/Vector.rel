@@ -1,0 +1,37 @@
+XL3
+H 9 areas 4 global symbols
+M Vector
+O -msm83
+S .__.ABS. Def000000
+S _memcpy Ref000000
+A _CODE size 59 flags 0 addr 0
+S _VectorAdd Def000000
+S _VectorRemovePos Def00000A
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 4F 1A 3C 12 6F 26 00 19 71 C9
+R 00 00 00 00
+T 0A 00 00
+R 00 00 00 00
+T 0A 00 00 E8 FA F8 04 73 23 72 2B 5E 23 56 F5 1A
+R 00 00 00 00
+T 17 00 00 4F F1 06 00 F8 00 22 AF 22 23 D1 D5 79
+R 00 00 00 00
+T 24 00 00 93 5F 78 9A 32 7B 22 23 C1 C5 03 03 2A
+R 00 00 00 00
+T 31 00 00 66 6F 09 4D 44 D1 D5 13 F8 04 2A 66 6F
+R 00 00 00 00
+T 3E 00 00 19 5D 54 F8 02 2A 66 6F E5 CD 00 00 F8
+R 00 00 00 00 02 0D 01 00
+T 4B 00 00 04 2A 5F 56 1A 4F 0D 3A 6E 67 71 E8 06
+R 00 00 00 00
+T 58 00 00 C9
+R 00 00 00 00

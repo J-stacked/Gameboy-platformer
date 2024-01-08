@@ -1,0 +1,534 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ISO C Compiler 
+                                      3 ; Version 4.3.2 #14228 (MINGW32)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module SGB
+                                      6 	.optsdcc -msm83
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _set_sgb_border
+                                     12 	.globl _PopBank
+                                     13 	.globl _PushBank
+                                     14 	.globl _memset
+                                     15 	.globl _sgb_transfer
+                                     16 	.globl _sgb_check
+                                     17 	.globl _fill_bkg_rect
+                                     18 	.globl _set_bkg_tiles
+                                     19 	.globl _set_bkg_data
+                                     20 	.globl _LoadSGBBorder
+                                     21 ;--------------------------------------------------------
+                                     22 ; special function registers
+                                     23 ;--------------------------------------------------------
+                                     24 ;--------------------------------------------------------
+                                     25 ; ram data
+                                     26 ;--------------------------------------------------------
+                                     27 	.area _DATA
+                                     28 ;--------------------------------------------------------
+                                     29 ; ram data
+                                     30 ;--------------------------------------------------------
+                                     31 	.area _INITIALIZED
+                                     32 ;--------------------------------------------------------
+                                     33 ; absolute external ram data
+                                     34 ;--------------------------------------------------------
+                                     35 	.area _DABS (ABS)
+                                     36 ;--------------------------------------------------------
+                                     37 ; global & static initialisations
+                                     38 ;--------------------------------------------------------
+                                     39 	.area _HOME
+                                     40 	.area _GSINIT
+                                     41 	.area _GSFINAL
+                                     42 	.area _GSINIT
+                                     43 ;--------------------------------------------------------
+                                     44 ; Home
+                                     45 ;--------------------------------------------------------
+                                     46 	.area _HOME
+                                     47 	.area _HOME
+                                     48 ;--------------------------------------------------------
+                                     49 ; code
+                                     50 ;--------------------------------------------------------
+                                     51 	.area _CODE
+                                     52 ;C:/gbdk/ZGB/common/src/SGB.c:18: void set_sgb_border(unsigned char * tiledata, size_t tiledata_size,
+                                     53 ;	---------------------------------
+                                     54 ; Function set_sgb_border
+                                     55 ; ---------------------------------
+      000000                         56 _set_sgb_border::
+      000000 E8 E5            [16]   57 	add	sp, #-27
+      000002 F8 14            [12]   58 	ldhl	sp,	#20
+      000004 7B               [ 4]   59 	ld	a, e
+      000005 22               [ 8]   60 	ld	(hl+), a
+      000006 72               [ 8]   61 	ld	(hl), d
+      000007 F8 19            [12]   62 	ldhl	sp,	#25
+      000009 79               [ 4]   63 	ld	a, c
+      00000A 22               [ 8]   64 	ld	(hl+), a
+      00000B 70               [ 8]   65 	ld	(hl), b
+                                     66 ;C:/gbdk/ZGB/common/src/SGB.c:21: if (sgb_check()) {
+      00000C CDr00r00         [24]   67 	call	_sgb_check
+      00000F F8 18            [12]   68 	ldhl	sp,#24
+      000011 73               [ 8]   69 	ld	(hl), e
+      000012 7E               [ 8]   70 	ld	a, (hl)
+      000013 B7               [ 4]   71 	or	a, a
+      000014 CArE2r01         [16]   72 	jp	Z, 00117$
+                                     73 ;C:/gbdk/ZGB/common/src/SGB.c:23: memset(map_buf, 0, sizeof(map_buf));
+      000017 21 00 00         [12]   74 	ld	hl, #0
+      00001A 39               [ 8]   75 	add	hl, sp
+      00001B 11 14 00         [12]   76 	ld	de, #0x0014
+      00001E D5               [16]   77 	push	de
+      00001F 11 00 00         [12]   78 	ld	de, #0x0000
+      000022 D5               [16]   79 	push	de
+      000023 E5               [16]   80 	push	hl
+      000024 CDr00r00         [24]   81 	call	_memset
+      000027 E8 06            [16]   82 	add	sp, #6
+                                     83 ;C:/gbdk/ZGB/common/src/SGB.c:25: SGB_TRANSFER((SGB_MASK_EN << 3) | 1, SGB_SCR_FREEZE); 
+      000029 F8 00            [12]   84 	ldhl	sp,	#0
+      00002B 3E B9            [ 8]   85 	ld	a, #0xb9
+      00002D 22               [ 8]   86 	ld	(hl+), a
+      00002E 36 01            [12]   87 	ld	(hl), #0x01
+      000030 21 00 00         [12]   88 	ld	hl, #0
+      000033 39               [ 8]   89 	add	hl, sp
+      000034 E5               [16]   90 	push	hl
+      000035 CDr00r00         [24]   91 	call	_sgb_transfer
+      000038 E1               [12]   92 	pop	hl
+                                     93 ;C:/gbdk/ZGB/common/src/SGB.c:27: BGP_REG = OBP0_REG = OBP1_REG = 0xE4U;
+      000039 3E E4            [ 8]   94 	ld	a, #0xe4
+      00003B E0r00            [12]   95 	ldh	(_OBP1_REG + 0), a
+      00003D 3E E4            [ 8]   96 	ld	a, #0xe4
+      00003F E0r00            [12]   97 	ldh	(_OBP0_REG + 0), a
+      000041 3E E4            [ 8]   98 	ld	a, #0xe4
+      000043 E0r00            [12]   99 	ldh	(_BGP_REG + 0), a
+                                    100 ;C:/gbdk/ZGB/common/src/SGB.c:28: SCX_REG = SCY_REG = 0U;
+      000045 AF               [ 4]  101 	xor	a, a
+      000046 E0r00            [12]  102 	ldh	(_SCY_REG + 0), a
+      000048 AF               [ 4]  103 	xor	a, a
+      000049 E0r00            [12]  104 	ldh	(_SCX_REG + 0), a
+                                    105 ;C:/gbdk/ZGB/common/src/SGB.c:30: uint8_t tmp_lcdc = LCDC_REG;
+      00004B F0r00            [12]  106 	ldh	a, (_LCDC_REG + 0)
+      00004D F8 16            [12]  107 	ldhl	sp,	#22
+      00004F 77               [ 8]  108 	ld	(hl), a
+                                    109 ;C:/gbdk/ZGB/common/src/SGB.c:32: HIDE_SPRITES, HIDE_WIN, SHOW_BKG;
+      000050 F0r00            [12]  110 	ldh	a, (_LCDC_REG + 0)
+      000052 E6 FD            [ 8]  111 	and	a, #0xfd
+      000054 E0r00            [12]  112 	ldh	(_LCDC_REG + 0), a
+      000056 F0r00            [12]  113 	ldh	a, (_LCDC_REG + 0)
+      000058 E6 DF            [ 8]  114 	and	a, #0xdf
+      00005A E0r00            [12]  115 	ldh	(_LCDC_REG + 0), a
+      00005C F0r00            [12]  116 	ldh	a, (_LCDC_REG + 0)
+      00005E F6 01            [ 8]  117 	or	a, #0x01
+      000060 E0r00            [12]  118 	ldh	(_LCDC_REG + 0), a
+                                    119 ;C:/gbdk/ZGB/common/src/SGB.c:33: DISPLAY_ON;
+      000062 F0r00            [12]  120 	ldh	a, (_LCDC_REG + 0)
+      000064 F6 80            [ 8]  121 	or	a, #0x80
+      000066 E0r00            [12]  122 	ldh	(_LCDC_REG + 0), a
+                                    123 ;C:/gbdk/ZGB/common/src/SGB.c:35: uint8_t i = 0U;
+                                    124 ;C:/gbdk/ZGB/common/src/SGB.c:36: for (uint8_t y = 0; y != 14U; ++y) {
+      000068 01 00 00         [12]  125 	ld	bc, #0x0
+      00006B                        126 00115$:
+      00006B 78               [ 4]  127 	ld	a, b
+      00006C D6 0E            [ 8]  128 	sub	a, #0x0e
+      00006E 28 2A            [12]  129 	jr	Z, 00102$
+                                    130 ;C:/gbdk/ZGB/common/src/SGB.c:37: uint8_t * dout = map_buf;
+      000070 21 00 00         [12]  131 	ld	hl, #0
+      000073 39               [ 8]  132 	add	hl, sp
+      000074 5D               [ 4]  133 	ld	e, l
+      000075 54               [ 4]  134 	ld	d, h
+                                    135 ;C:/gbdk/ZGB/common/src/SGB.c:38: for (uint8_t x = 0U; x != 20U; ++x) {
+      000076 AF               [ 4]  136 	xor	a, a
+      000077                        137 00112$:
+      000077 FE 14            [ 8]  138 	cp	a, #0x14
+      000079 28 09            [12]  139 	jr	Z, 00129$
+                                    140 ;C:/gbdk/ZGB/common/src/SGB.c:39: *dout++ = i++;
+      00007B F5               [16]  141 	push	af
+      00007C 79               [ 4]  142 	ld	a, c
+      00007D 12               [ 8]  143 	ld	(de), a
+      00007E F1               [12]  144 	pop	af
+      00007F 0C               [ 4]  145 	inc	c
+      000080 13               [ 8]  146 	inc	de
+                                    147 ;C:/gbdk/ZGB/common/src/SGB.c:38: for (uint8_t x = 0U; x != 20U; ++x) {
+      000081 3C               [ 4]  148 	inc	a
+      000082 18 F3            [12]  149 	jr	00112$
+      000084                        150 00129$:
+                                    151 ;C:/gbdk/ZGB/common/src/SGB.c:41: set_bkg_tiles(0, y, 20, 1, map_buf);
+      000084 21 00 00         [12]  152 	ld	hl, #0
+      000087 39               [ 8]  153 	add	hl, sp
+      000088 E5               [16]  154 	push	hl
+      000089 21 14 01         [12]  155 	ld	hl, #0x114
+      00008C E5               [16]  156 	push	hl
+      00008D C5               [16]  157 	push	bc
+      00008E 33               [ 8]  158 	inc	sp
+      00008F AF               [ 4]  159 	xor	a, a
+      000090 F5               [16]  160 	push	af
+      000091 33               [ 8]  161 	inc	sp
+      000092 CDr00r00         [24]  162 	call	_set_bkg_tiles
+      000095 E8 06            [16]  163 	add	sp, #6
+                                    164 ;C:/gbdk/ZGB/common/src/SGB.c:36: for (uint8_t y = 0; y != 14U; ++y) {
+      000097 04               [ 4]  165 	inc	b
+      000098 18 D1            [12]  166 	jr	00115$
+      00009A                        167 00102$:
+                                    168 ;C:/gbdk/ZGB/common/src/SGB.c:43: memset(map_buf, 0, sizeof(map_buf));
+      00009A 21 00 00         [12]  169 	ld	hl, #0
+      00009D 39               [ 8]  170 	add	hl, sp
+      00009E 11 14 00         [12]  171 	ld	de, #0x0014
+      0000A1 D5               [16]  172 	push	de
+      0000A2 11 00 00         [12]  173 	ld	de, #0x0000
+      0000A5 D5               [16]  174 	push	de
+      0000A6 E5               [16]  175 	push	hl
+      0000A7 CDr00r00         [24]  176 	call	_memset
+      0000AA E8 06            [16]  177 	add	sp, #6
+                                    178 ;C:/gbdk/ZGB/common/src/SGB.c:46: uint8_t ntiles = (tiledata_size > 256 * 32) ? 0 : tiledata_size >> 5;
+      0000AC F8 19            [12]  179 	ldhl	sp,	#25
+      0000AE AF               [ 4]  180 	xor	a, a
+      0000AF 96               [ 8]  181 	sub	a, (hl)
+      0000B0 23               [ 8]  182 	inc	hl
+      0000B1 3E 20            [ 8]  183 	ld	a, #0x20
+      0000B3 9E               [ 8]  184 	sbc	a, (hl)
+      0000B4 30 07            [12]  185 	jr	NC, 00119$
+      0000B6 AF               [ 4]  186 	xor	a, a
+      0000B7 F8 17            [12]  187 	ldhl	sp,	#23
+      0000B9 22               [ 8]  188 	ld	(hl+), a
+      0000BA 77               [ 8]  189 	ld	(hl), a
+      0000BB 18 27            [12]  190 	jr	00120$
+      0000BD                        191 00119$:
+      0000BD F8 19            [12]  192 	ldhl	sp,	#25
+      0000BF 3A               [ 8]  193 	ld	a, (hl-)
+      0000C0 2B               [ 8]  194 	dec	hl
+      0000C1 77               [ 8]  195 	ld	(hl), a
+      0000C2 F8 1A            [12]  196 	ldhl	sp,	#26
+      0000C4 3A               [ 8]  197 	ld	a, (hl-)
+      0000C5 2B               [ 8]  198 	dec	hl
+      0000C6 77               [ 8]  199 	ld	(hl), a
+      0000C7 CB 3E            [16]  200 	srl	(hl)
+      0000C9 2B               [ 8]  201 	dec	hl
+      0000CA CB 1E            [16]  202 	rr	(hl)
+      0000CC 23               [ 8]  203 	inc	hl
+      0000CD CB 3E            [16]  204 	srl	(hl)
+      0000CF 2B               [ 8]  205 	dec	hl
+      0000D0 CB 1E            [16]  206 	rr	(hl)
+      0000D2 23               [ 8]  207 	inc	hl
+      0000D3 CB 3E            [16]  208 	srl	(hl)
+      0000D5 2B               [ 8]  209 	dec	hl
+      0000D6 CB 1E            [16]  210 	rr	(hl)
+      0000D8 23               [ 8]  211 	inc	hl
+      0000D9 CB 3E            [16]  212 	srl	(hl)
+      0000DB 2B               [ 8]  213 	dec	hl
+      0000DC CB 1E            [16]  214 	rr	(hl)
+      0000DE 23               [ 8]  215 	inc	hl
+      0000DF CB 3E            [16]  216 	srl	(hl)
+      0000E1 2B               [ 8]  217 	dec	hl
+      0000E2 CB 1E            [16]  218 	rr	(hl)
+      0000E4                        219 00120$:
+      0000E4 F8 17            [12]  220 	ldhl	sp,	#23
+      0000E6 4E               [ 8]  221 	ld	c, (hl)
+                                    222 ;C:/gbdk/ZGB/common/src/SGB.c:47: if ((!ntiles) || (ntiles > 128U)) { 
+      0000E7 79               [ 4]  223 	ld	a, c
+      0000E8 B7               [ 4]  224 	or	a, a
+      0000E9 28 05            [12]  225 	jr	Z, 00105$
+      0000EB 3E 80            [ 8]  226 	ld	a, #0x80
+      0000ED 91               [ 4]  227 	sub	a, c
+      0000EE 30 4F            [12]  228 	jr	NC, 00106$
+      0000F0                        229 00105$:
+                                    230 ;C:/gbdk/ZGB/common/src/SGB.c:48: set_bkg_data(0, 0, tiledata); 
+      0000F0 F8 14            [12]  231 	ldhl	sp,	#20
+      0000F2 2A               [ 8]  232 	ld	a, (hl+)
+      0000F3 5F               [ 4]  233 	ld	e, a
+      0000F4 56               [ 8]  234 	ld	d, (hl)
+      0000F5 D5               [16]  235 	push	de
+      0000F6 AF               [ 4]  236 	xor	a, a
+      0000F7 0F               [ 4]  237 	rrca
+      0000F8 F5               [16]  238 	push	af
+      0000F9 CDr00r00         [24]  239 	call	_set_bkg_data
+      0000FC E8 04            [16]  240 	add	sp, #4
+                                    241 ;C:/gbdk/ZGB/common/src/SGB.c:49: SGB_TRANSFER((SGB_CHR_TRN << 3) | 1, SGB_CHR_BLOCK0);
+      0000FE F8 00            [12]  242 	ldhl	sp,	#0
+      000100 3E 99            [ 8]  243 	ld	a, #0x99
+      000102 22               [ 8]  244 	ld	(hl+), a
+      000103 36 00            [12]  245 	ld	(hl), #0x00
+      000105 21 00 00         [12]  246 	ld	hl, #0
+      000108 39               [ 8]  247 	add	hl, sp
+      000109 E5               [16]  248 	push	hl
+      00010A CDr00r00         [24]  249 	call	_sgb_transfer
+      00010D E1               [12]  250 	pop	hl
+                                    251 ;C:/gbdk/ZGB/common/src/SGB.c:50: if (ntiles) ntiles -= 128U; 
+      00010E 79               [ 4]  252 	ld	a, c
+      00010F B7               [ 4]  253 	or	a, a
+      000110 28 04            [12]  254 	jr	Z, 00104$
+      000112 79               [ 4]  255 	ld	a, c
+      000113 C6 80            [ 8]  256 	add	a, #0x80
+      000115 4F               [ 4]  257 	ld	c, a
+      000116                        258 00104$:
+                                    259 ;C:/gbdk/ZGB/common/src/SGB.c:51: tiledata += (128 * 32);
+      000116 F8 14            [12]  260 	ldhl	sp,#20
+      000118 2A               [ 8]  261 	ld	a, (hl+)
+      000119 5F               [ 4]  262 	ld	e, a
+      00011A 56               [ 8]  263 	ld	d, (hl)
+      00011B 21 00 10         [12]  264 	ld	hl, #0x1000
+      00011E 19               [ 8]  265 	add	hl, de
+      00011F 5D               [ 4]  266 	ld	e, l
+      000120 54               [ 4]  267 	ld	d, h
+                                    268 ;C:/gbdk/ZGB/common/src/SGB.c:52: set_bkg_data(0, ntiles << 1, tiledata); 
+      000121 79               [ 4]  269 	ld	a, c
+      000122 87               [ 4]  270 	add	a, a
+      000123 D5               [16]  271 	push	de
+      000124 67               [ 4]  272 	ld	h, a
+      000125 2E 00            [ 8]  273 	ld	l, #0x00
+      000127 E5               [16]  274 	push	hl
+      000128 CDr00r00         [24]  275 	call	_set_bkg_data
+      00012B E8 04            [16]  276 	add	sp, #4
+                                    277 ;C:/gbdk/ZGB/common/src/SGB.c:53: SGB_TRANSFER((SGB_CHR_TRN << 3) | 1, SGB_CHR_BLOCK1);
+      00012D F8 00            [12]  278 	ldhl	sp,	#0
+      00012F 3E 99            [ 8]  279 	ld	a, #0x99
+      000131 22               [ 8]  280 	ld	(hl+), a
+      000132 36 01            [12]  281 	ld	(hl), #0x01
+      000134 21 00 00         [12]  282 	ld	hl, #0
+      000137 39               [ 8]  283 	add	hl, sp
+      000138 E5               [16]  284 	push	hl
+      000139 CDr00r00         [24]  285 	call	_sgb_transfer
+      00013C E1               [12]  286 	pop	hl
+      00013D 18 21            [12]  287 	jr	00107$
+      00013F                        288 00106$:
+                                    289 ;C:/gbdk/ZGB/common/src/SGB.c:55: set_bkg_data(0, ntiles << 1, tiledata); 
+      00013F 79               [ 4]  290 	ld	a, c
+      000140 87               [ 4]  291 	add	a, a
+      000141 F8 14            [12]  292 	ldhl	sp,	#20
+      000143 5E               [ 8]  293 	ld	e, (hl)
+      000144 23               [ 8]  294 	inc	hl
+      000145 56               [ 8]  295 	ld	d, (hl)
+      000146 D5               [16]  296 	push	de
+      000147 67               [ 4]  297 	ld	h, a
+      000148 2E 00            [ 8]  298 	ld	l, #0x00
+      00014A E5               [16]  299 	push	hl
+      00014B CDr00r00         [24]  300 	call	_set_bkg_data
+      00014E E8 04            [16]  301 	add	sp, #4
+                                    302 ;C:/gbdk/ZGB/common/src/SGB.c:56: SGB_TRANSFER((SGB_CHR_TRN << 3) | 1, SGB_CHR_BLOCK0);
+      000150 F8 00            [12]  303 	ldhl	sp,	#0
+      000152 3E 99            [ 8]  304 	ld	a, #0x99
+      000154 22               [ 8]  305 	ld	(hl+), a
+      000155 36 00            [12]  306 	ld	(hl), #0x00
+      000157 21 00 00         [12]  307 	ld	hl, #0
+      00015A 39               [ 8]  308 	add	hl, sp
+      00015B E5               [16]  309 	push	hl
+      00015C CDr00r00         [24]  310 	call	_sgb_transfer
+      00015F E1               [12]  311 	pop	hl
+      000160                        312 00107$:
+                                    313 ;C:/gbdk/ZGB/common/src/SGB.c:60: set_bkg_data(0, (uint8_t)(tilemap_size >> 4), tilemap);
+      000160 F8 1F            [12]  314 	ldhl	sp,	#31
+      000162 2A               [ 8]  315 	ld	a, (hl+)
+      000163 47               [ 4]  316 	ld	b, a
+      000164 4E               [ 8]  317 	ld	c, (hl)
+      000165 CB 39            [ 8]  318 	srl	c
+      000167 CB 18            [ 8]  319 	rr	b
+      000169 CB 39            [ 8]  320 	srl	c
+      00016B CB 18            [ 8]  321 	rr	b
+      00016D CB 39            [ 8]  322 	srl	c
+      00016F CB 18            [ 8]  323 	rr	b
+      000171 CB 39            [ 8]  324 	srl	c
+      000173 CB 18            [ 8]  325 	rr	b
+      000175 F8 1D            [12]  326 	ldhl	sp,	#29
+      000177 2A               [ 8]  327 	ld	a, (hl+)
+      000178 5F               [ 4]  328 	ld	e, a
+      000179 56               [ 8]  329 	ld	d, (hl)
+      00017A D5               [16]  330 	push	de
+      00017B C5               [16]  331 	push	bc
+      00017C 33               [ 8]  332 	inc	sp
+      00017D AF               [ 4]  333 	xor	a, a
+      00017E F5               [16]  334 	push	af
+      00017F 33               [ 8]  335 	inc	sp
+      000180 CDr00r00         [24]  336 	call	_set_bkg_data
+      000183 E8 04            [16]  337 	add	sp, #4
+                                    338 ;C:/gbdk/ZGB/common/src/SGB.c:61: set_bkg_data(128, (uint8_t)(palette_size >> 4), palette);
+      000185 F8 23            [12]  339 	ldhl	sp,	#35
+      000187 2A               [ 8]  340 	ld	a, (hl+)
+      000188 47               [ 4]  341 	ld	b, a
+      000189 4E               [ 8]  342 	ld	c, (hl)
+      00018A CB 39            [ 8]  343 	srl	c
+      00018C CB 18            [ 8]  344 	rr	b
+      00018E CB 39            [ 8]  345 	srl	c
+      000190 CB 18            [ 8]  346 	rr	b
+      000192 CB 39            [ 8]  347 	srl	c
+      000194 CB 18            [ 8]  348 	rr	b
+      000196 CB 39            [ 8]  349 	srl	c
+      000198 CB 18            [ 8]  350 	rr	b
+      00019A F8 21            [12]  351 	ldhl	sp,	#33
+      00019C 2A               [ 8]  352 	ld	a, (hl+)
+      00019D 5F               [ 4]  353 	ld	e, a
+      00019E 56               [ 8]  354 	ld	d, (hl)
+      00019F D5               [16]  355 	push	de
+      0001A0 C5               [16]  356 	push	bc
+      0001A1 33               [ 8]  357 	inc	sp
+      0001A2 3E 80            [ 8]  358 	ld	a, #0x80
+      0001A4 F5               [16]  359 	push	af
+      0001A5 33               [ 8]  360 	inc	sp
+      0001A6 CDr00r00         [24]  361 	call	_set_bkg_data
+      0001A9 E8 04            [16]  362 	add	sp, #4
+                                    363 ;C:/gbdk/ZGB/common/src/SGB.c:62: SGB_TRANSFER((SGB_PCT_TRN << 3) | 1, 0);
+      0001AB F8 00            [12]  364 	ldhl	sp,	#0
+      0001AD 3E A1            [ 8]  365 	ld	a, #0xa1
+      0001AF 22               [ 8]  366 	ld	(hl+), a
+      0001B0 36 00            [12]  367 	ld	(hl), #0x00
+      0001B2 21 00 00         [12]  368 	ld	hl, #0
+      0001B5 39               [ 8]  369 	add	hl, sp
+      0001B6 E5               [16]  370 	push	hl
+      0001B7 CDr00r00         [24]  371 	call	_sgb_transfer
+      0001BA E1               [12]  372 	pop	hl
+                                    373 ;C:/gbdk/ZGB/common/src/SGB.c:64: LCDC_REG = tmp_lcdc;
+      0001BB F8 16            [12]  374 	ldhl	sp,	#22
+      0001BD 7E               [ 8]  375 	ld	a, (hl)
+      0001BE E0r00            [12]  376 	ldh	(_LCDC_REG + 0), a
+                                    377 ;C:/gbdk/ZGB/common/src/SGB.c:67: fill_bkg_rect(0, 0, 20, 18, 0);
+      0001C0 AF               [ 4]  378 	xor	a, a
+      0001C1 67               [ 4]  379 	ld	h, a
+      0001C2 2E 12            [ 8]  380 	ld	l, #0x12
+      0001C4 E5               [16]  381 	push	hl
+      0001C5 3E 14            [ 8]  382 	ld	a, #0x14
+      0001C7 F5               [16]  383 	push	af
+      0001C8 33               [ 8]  384 	inc	sp
+      0001C9 AF               [ 4]  385 	xor	a, a
+      0001CA 0F               [ 4]  386 	rrca
+      0001CB F5               [16]  387 	push	af
+      0001CC AF               [ 4]  388 	xor	a, a
+      0001CD CDr00r00         [24]  389 	call	_fill_bkg_rect
+      0001D0 E8 05            [16]  390 	add	sp, #5
+                                    391 ;C:/gbdk/ZGB/common/src/SGB.c:69: SGB_TRANSFER((SGB_MASK_EN << 3) | 1, SGB_SCR_UNFREEZE); 
+      0001D2 F8 00            [12]  392 	ldhl	sp,	#0
+      0001D4 36 B9            [12]  393 	ld	(hl), #0xb9
+      0001D6 23               [ 8]  394 	inc	hl
+      0001D7 36 00            [12]  395 	ld	(hl), #0x00
+      0001D9 21 00 00         [12]  396 	ld	hl, #0
+      0001DC 39               [ 8]  397 	add	hl, sp
+      0001DD E5               [16]  398 	push	hl
+      0001DE CDr00r00         [24]  399 	call	_sgb_transfer
+      0001E1 E1               [12]  400 	pop	hl
+      0001E2                        401 00117$:
+                                    402 ;C:/gbdk/ZGB/common/src/SGB.c:71: }
+      0001E2 E8 1B            [16]  403 	add	sp, #27
+      0001E4 E1               [12]  404 	pop	hl
+      0001E5 E8 08            [16]  405 	add	sp, #8
+      0001E7 E9               [ 4]  406 	jp	(hl)
+                                    407 ;C:/gbdk/ZGB/common/src/SGB.c:73: void LoadSGBBorder(UINT8 map_bank, struct MapInfo* map) {
+                                    408 ;	---------------------------------
+                                    409 ; Function LoadSGBBorder
+                                    410 ; ---------------------------------
+      0001E8                        411 _LoadSGBBorder::
+      0001E8 E8 F4            [16]  412 	add	sp, #-12
+      0001EA F8 0A            [12]  413 	ldhl	sp,	#10
+      0001EC 73               [ 8]  414 	ld	(hl), e
+      0001ED 23               [ 8]  415 	inc	hl
+      0001EE 72               [ 8]  416 	ld	(hl), d
+                                    417 ;C:/gbdk/ZGB/common/src/SGB.c:74: PUSH_BANK(map_bank);
+      0001EF F5               [16]  418 	push	af
+      0001F0 33               [ 8]  419 	inc	sp
+      0001F1 CDr00r00         [24]  420 	call	_PushBank
+      0001F4 33               [ 8]  421 	inc	sp
+                                    422 ;C:/gbdk/ZGB/common/src/SGB.c:75: set_sgb_border(map->tiles->data, map->tiles->num_frames << 5, map->data, 1792, map->tiles->pals, map->tiles->num_pals << 5);
+      0001F5 F8 0A            [12]  423 	ldhl	sp,#10
+      0001F7 2A               [ 8]  424 	ld	a, (hl+)
+      0001F8 5F               [ 4]  425 	ld	e, a
+      0001F9 56               [ 8]  426 	ld	d, (hl)
+      0001FA 21 07 00         [12]  427 	ld	hl, #0x0007
+      0001FD 19               [ 8]  428 	add	hl, de
+      0001FE 2A               [ 8]  429 	ld	a, (hl+)
+      0001FF 4F               [ 4]  430 	ld	c, a
+      000200 46               [ 8]  431 	ld	b, (hl)
+      000201 59               [ 4]  432 	ld	e, c
+      000202 50               [ 4]  433 	ld	d, b
+      000203 13               [ 8]  434 	inc	de
+      000204 13               [ 8]  435 	inc	de
+      000205 13               [ 8]  436 	inc	de
+      000206 1A               [ 8]  437 	ld	a, (de)
+      000207 1E 00            [ 8]  438 	ld	e, #0x00
+      000209 87               [ 4]  439 	add	a, a
+      00020A CB 13            [ 8]  440 	rl	e
+      00020C 87               [ 4]  441 	add	a, a
+      00020D CB 13            [ 8]  442 	rl	e
+      00020F 87               [ 4]  443 	add	a, a
+      000210 CB 13            [ 8]  444 	rl	e
+      000212 87               [ 4]  445 	add	a, a
+      000213 CB 13            [ 8]  446 	rl	e
+      000215 87               [ 4]  447 	add	a, a
+      000216 CB 13            [ 8]  448 	rl	e
+      000218 F8 00            [12]  449 	ldhl	sp,	#0
+      00021A 22               [ 8]  450 	ld	(hl+), a
+      00021B 73               [ 8]  451 	ld	(hl), e
+      00021C 21 04 00         [12]  452 	ld	hl, #0x0004
+      00021F 09               [ 8]  453 	add	hl, bc
+      000220 5D               [ 4]  454 	ld	e, l
+      000221 54               [ 4]  455 	ld	d, h
+      000222 1A               [ 8]  456 	ld	a, (de)
+      000223 F8 08            [12]  457 	ldhl	sp,	#8
+      000225 22               [ 8]  458 	ld	(hl+), a
+      000226 13               [ 8]  459 	inc	de
+      000227 1A               [ 8]  460 	ld	a, (de)
+      000228 77               [ 8]  461 	ld	(hl), a
+      000229 F8 08            [12]  462 	ldhl	sp,	#8
+      00022B 7E               [ 8]  463 	ld	a, (hl)
+      00022C F8 02            [12]  464 	ldhl	sp,	#2
+      00022E 77               [ 8]  465 	ld	(hl), a
+      00022F F8 09            [12]  466 	ldhl	sp,	#9
+      000231 7E               [ 8]  467 	ld	a, (hl)
+      000232 F8 03            [12]  468 	ldhl	sp,	#3
+      000234 77               [ 8]  469 	ld	(hl), a
+      000235 F8 0A            [12]  470 	ldhl	sp,#10
+      000237 2A               [ 8]  471 	ld	a, (hl+)
+      000238 5F               [ 4]  472 	ld	e, a
+      000239 56               [ 8]  473 	ld	d, (hl)
+      00023A 1A               [ 8]  474 	ld	a, (de)
+      00023B F8 04            [12]  475 	ldhl	sp,	#4
+      00023D 22               [ 8]  476 	ld	(hl+), a
+      00023E 13               [ 8]  477 	inc	de
+      00023F 1A               [ 8]  478 	ld	a, (de)
+      000240 22               [ 8]  479 	ld	(hl+), a
+      000241 0A               [ 8]  480 	ld	a, (bc)
+      000242 1E 00            [ 8]  481 	ld	e, #0x00
+      000244 87               [ 4]  482 	add	a, a
+      000245 CB 13            [ 8]  483 	rl	e
+      000247 87               [ 4]  484 	add	a, a
+      000248 CB 13            [ 8]  485 	rl	e
+      00024A 87               [ 4]  486 	add	a, a
+      00024B CB 13            [ 8]  487 	rl	e
+      00024D 87               [ 4]  488 	add	a, a
+      00024E CB 13            [ 8]  489 	rl	e
+      000250 87               [ 4]  490 	add	a, a
+      000251 CB 13            [ 8]  491 	rl	e
+      000253 22               [ 8]  492 	ld	(hl+), a
+      000254 7B               [ 4]  493 	ld	a, e
+      000255 22               [ 8]  494 	ld	(hl+), a
+      000256 03               [ 8]  495 	inc	bc
+      000257 59               [ 4]  496 	ld	e, c
+      000258 50               [ 4]  497 	ld	d, b
+      000259 1A               [ 8]  498 	ld	a, (de)
+      00025A 22               [ 8]  499 	ld	(hl+), a
+      00025B 13               [ 8]  500 	inc	de
+      00025C 1A               [ 8]  501 	ld	a, (de)
+      00025D 77               [ 8]  502 	ld	(hl), a
+      00025E D1               [12]  503 	pop	de
+      00025F D5               [16]  504 	push	de
+      000260 D5               [16]  505 	push	de
+      000261 F8 04            [12]  506 	ldhl	sp,	#4
+      000263 2A               [ 8]  507 	ld	a, (hl+)
+      000264 5F               [ 4]  508 	ld	e, a
+      000265 2A               [ 8]  509 	ld	a, (hl+)
+      000266 57               [ 4]  510 	ld	d, a
+      000267 D5               [16]  511 	push	de
+      000268 11 00 07         [12]  512 	ld	de, #0x0700
+      00026B D5               [16]  513 	push	de
+      00026C 2A               [ 8]  514 	ld	a, (hl+)
+      00026D 5F               [ 4]  515 	ld	e, a
+      00026E 2A               [ 8]  516 	ld	a, (hl+)
+      00026F 57               [ 4]  517 	ld	d, a
+      000270 D5               [16]  518 	push	de
+      000271 2A               [ 8]  519 	ld	a, (hl+)
+      000272 4F               [ 4]  520 	ld	c, a
+      000273 2A               [ 8]  521 	ld	a, (hl+)
+      000274 47               [ 4]  522 	ld	b, a
+      000275 2A               [ 8]  523 	ld	a, (hl+)
+      000276 5F               [ 4]  524 	ld	e, a
+      000277 56               [ 8]  525 	ld	d, (hl)
+      000278 CDr00r00         [24]  526 	call	_set_sgb_border
+                                    527 ;C:/gbdk/ZGB/common/src/SGB.c:76: POP_BANK;
+      00027B CDr00r00         [24]  528 	call	_PopBank
+                                    529 ;C:/gbdk/ZGB/common/src/SGB.c:77: }
+      00027E E8 0C            [16]  530 	add	sp, #12
+      000280 C9               [16]  531 	ret
+                                    532 	.area _CODE
+                                    533 	.area _INITIALIZER
+                                    534 	.area _CABS (ABS)

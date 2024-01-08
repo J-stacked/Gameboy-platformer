@@ -1,0 +1,45 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 1
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  002710 L
+    .__.ABS.                                                    =  000000 G
+    .__.CPU.                                                    =  000000 L
+    .__.H$L.                                                    =  000000 L
+  4 _MusicCallback                                                 000000 GR
+    _NR50_REG                                                      ****** GX
+    _NR51_REG                                                      ****** GX
+    _NR52_REG                                                      ****** GX
+  0 ___PlayMusic                                                   00001E GR
+    __current_bank                                                 ****** GX
+  7 __xinit__hUGE_paused                                           000000 R
+  7 __xinit__last_music                                            000001 R
+  7 __xinit__stop_music_on_new_state                               000003 R
+  1 _hUGE_current_track                                            000000 GR
+  1 _hUGE_current_track_bank                                       000002 GR
+    _hUGE_dosound                                                  ****** GX
+    _hUGE_init                                                     ****** GX
+  0 _hUGE_mute                                                     000000 GR
+    _hUGE_mute_channel                                             ****** GX
+  2 _hUGE_paused                                                   000000 GR
+  2 _last_music                                                    000001 GR
+    _rROMB0                                                        ****** GX
+  2 _stop_music_on_new_state                                       000003 GR
+
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 2
+Hexadecimal [24-Bits]
+
+Area Table
+
+   0 _CODE                                      size     6F   flags    0
+   1 _DATA                                      size      3   flags    0
+   2 _INITIALIZED                               size      4   flags    0
+   3 _DABS                                      size      0   flags    8
+   4 _HOME                                      size     1D   flags    0
+   5 _GSINIT                                    size      0   flags    0
+   6 _GSFINAL                                   size      0   flags    0
+   7 _INITIALIZER                               size      4   flags    0
+   8 _CABS                                      size      0   flags    8
+

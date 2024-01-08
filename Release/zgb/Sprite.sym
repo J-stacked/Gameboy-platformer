@@ -1,0 +1,63 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 1
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  002710 L
+    .__.ABS.                                                    =  000000 G
+    .__.CPU.                                                    =  000000 L
+    .__.H$L.                                                    =  000000 L
+  0 _CheckCollision                                                0009CD GR
+  0 _DrawSprite                                                    00016B GR
+  0 _InitSprite                                                    000054 GR
+    _LCDC_REG                                                      ****** GX
+    _PopBank                                                       ****** GX
+    _PushBank                                                      ****** GX
+  0 _SetFrame                                                      000000 GR
+  0 _SetSpriteAnim                                                 00010D GR
+    _SpriteManagerRemove                                           ****** GX
+    _THIS                                                          ****** GX
+    _THIS_IDX                                                      ****** GX
+  0 _TranslateSprite                                               00056B GR
+    ___current_base_prop                                           ****** GX
+    ___current_base_tile                                           ****** GX
+    ___current_metasprite                                          ****** GX
+    ___move_metasprite                                             ****** GX
+    ___move_metasprite_hflip                                       ****** GX
+    ___move_metasprite_hvflip                                      ****** GX
+    ___move_metasprite_vflip                                       ****** GX
+    ___render_shadow_OAM                                           ****** GX
+    __mulint                                                       ****** GX
+    _delta_time                                                    ****** GX
+    _next_oam_idx                                                  ****** GX
+    _scroll_bank                                                   ****** GX
+    _scroll_collisions                                             ****** GX
+    _scroll_collisions_down                                        ****** GX
+    _scroll_h                                                      ****** GX
+    _scroll_map                                                    ****** GX
+    _scroll_tiles_h                                                ****** GX
+    _scroll_tiles_w                                                ****** GX
+    _scroll_w                                                      ****** GX
+    _scroll_x                                                      ****** GX
+    _scroll_y                                                      ****** GX
+    _spriteDataBanks                                               ****** GX
+    _spriteDatas                                                   ****** GX
+    _spriteIdxs                                                    ****** GX
+  1 _tile_coll                                                     000000 GR
+  4 _update_attr                                                   000000 GR
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 2
+Hexadecimal [24-Bits]
+
+Area Table
+
+   0 _CODE                                      size    AC2   flags    0
+   1 _DATA                                      size      2   flags    0
+   2 _INITIALIZED                               size      0   flags    0
+   3 _DABS                                      size      0   flags    8
+   4 _HOME                                      size     1D   flags    0
+   5 _GSINIT                                    size      0   flags    0
+   6 _GSFINAL                                   size      0   flags    0
+   7 _INITIALIZER                               size      0   flags    0
+   8 _CABS                                      size      0   flags    8
+

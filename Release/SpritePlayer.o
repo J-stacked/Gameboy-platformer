@@ -1,0 +1,31 @@
+XL3
+H A areas 5 global symbols
+M SpritePlayer
+O -msm83
+S .__.ABS. Def000000
+S ___bank_SpritePlayer Def0000FF
+A _CODE size 0 flags 0 addr 0
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _CODE_255 size 3 flags 0 addr 0
+S _Update_SpritePlayer Def000001
+S _Destroy_SpritePlayer Def000002
+S _Start_SpritePlayer Def000000
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 07 00
+T 00 00 00 C9
+R 00 00 07 00
+T 01 00 00
+R 00 00 07 00
+T 01 00 00 C9
+R 00 00 07 00
+T 02 00 00
+R 00 00 07 00
+T 02 00 00 C9
+R 00 00 07 00

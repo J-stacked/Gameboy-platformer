@@ -1,0 +1,103 @@
+XL3
+H A areas 17 global symbols
+M ZGBMain_Init
+O -msm83
+S _Update_SpritePlayer Ref000000
+S _Start_StateGame Ref000000
+S _Destroy_SpritePlayer Ref000000
+S ___bank_StateGame Ref000000
+S _Update_StateGame Ref000000
+S .__.ABS. Def000000
+S ___bank_player Ref000000
+S _player Ref000000
+S _Start_SpritePlayer Ref000000
+S ___bank_SpritePlayer Ref000000
+A _CODE size 0 flags 0 addr 0
+A _DATA size 11 flags 0 addr 0
+S _spriteStartFuncs Def000007
+S _startFuncs Def000001
+S _spriteIdxs Def00000F
+S _spriteUpdateFuncs Def000009
+S _spriteDataBanks Def000006
+S _spriteDestroyFuncs Def00000B
+S _updateFuncs Def000003
+S _spriteDatas Def00000D
+S _spriteBanks Def000005
+S _spritePalsOffset Def000010
+S _stateBanks Def000000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _CODE_1 size 44 flags 0 addr 0
+S _InitSprites Def000017
+S _InitStates Def000000
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 01 00
+T 01 00 00
+R 00 00 01 00
+T 01 00 00
+R 00 00 01 00
+T 03 00 00
+R 00 00 01 00
+T 03 00 00
+R 00 00 01 00
+T 05 00 00
+R 00 00 01 00
+T 05 00 00
+R 00 00 01 00
+T 06 00 00
+R 00 00 01 00
+T 06 00 00
+R 00 00 01 00
+T 07 00 00
+R 00 00 01 00
+T 07 00 00
+R 00 00 01 00
+T 09 00 00
+R 00 00 01 00
+T 09 00 00
+R 00 00 01 00
+T 0B 00 00
+R 00 00 01 00
+T 0B 00 00
+R 00 00 01 00
+T 0D 00 00
+R 00 00 01 00
+T 0D 00 00
+R 00 00 01 00
+T 0F 00 00
+R 00 00 01 00
+T 0F 00 00
+R 00 00 01 00
+T 10 00 00
+R 00 00 01 00
+T 10 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 07 00
+T 00 00 00 21 01 00 36 00 00 00 23 36 00 00 00 21
+R 00 00 07 00 00 04 01 00 0B 07 01 00 8B 0C 01 00
+T 09 00 00 03 00 36 00 00 00 23 36 00 00 00 01
+R 00 00 07 00 00 03 01 00 0B 06 04 00 8B 0B 04 00
+T 11 00 00 00 00 3E 00 00 00 02 C9
+R 00 00 07 00 00 03 01 00 0B 06 03 00
+T 17 00 00
+R 00 00 07 00
+T 17 00 00 01 05 00 3E 00 00 00 02 21 07 00 36
+R 00 00 07 00 00 04 01 00 0B 07 09 00 00 0C 01 00
+T 21 00 00 00 00 00 23 36 00 00 00 21 09 00 36
+R 00 00 07 00 0B 03 08 00 8B 08 08 00 00 0C 01 00
+T 29 00 00 00 00 00 23 36 00 00 00 21 0B 00 36
+R 00 00 07 00 0B 03 00 00 8B 08 00 00 00 0C 01 00
+T 31 00 00 00 00 00 23 36 00 00 00 01 06 00 3E
+R 00 00 07 00 0B 03 02 00 8B 08 02 00 00 0C 01 00
+T 39 00 00 00 00 00 02 21 0D 00 36 00 00 00 23 36
+R 00 00 07 00 0B 03 06 00 00 08 01 00 0B 0B 07 00
+T 42 00 00 00 00 00 C9
+R 00 00 07 00 8B 03 07 00

@@ -1,0 +1,306 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 1
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  002710 L
+    .__.ABS.                                                    =  000000 G
+    .__.CPU.                                                    =  000000 L
+    .__.H$L.                                                    =  000000 L
+  7 A$SpritePlayer$116                                             00000B GR
+  7 A$SpritePlayer$117                                             00000C GR
+  7 A$SpritePlayer$121                                             00000D GR
+  7 A$SpritePlayer$122                                             000010 GR
+  7 A$SpritePlayer$123                                             000012 GR
+  7 A$SpritePlayer$127                                             000014 GR
+  7 A$SpritePlayer$128                                             000017 GR
+  7 A$SpritePlayer$132                                             000018 GR
+  7 A$SpritePlayer$133                                             00001A GR
+  7 A$SpritePlayer$134                                             00001B GR
+  7 A$SpritePlayer$135                                             00001C GR
+  7 A$SpritePlayer$136                                             00001F GR
+  7 A$SpritePlayer$137                                             000022 GR
+  7 A$SpritePlayer$138                                             000023 GR
+  7 A$SpritePlayer$139                                             000024 GR
+  7 A$SpritePlayer$140                                             000025 GR
+  7 A$SpritePlayer$145                                             000028 GR
+  7 A$SpritePlayer$146                                             00002B GR
+  7 A$SpritePlayer$147                                             00002D GR
+  7 A$SpritePlayer$151                                             00002F GR
+  7 A$SpritePlayer$152                                             000032 GR
+  7 A$SpritePlayer$156                                             000033 GR
+  7 A$SpritePlayer$157                                             000035 GR
+  7 A$SpritePlayer$158                                             000036 GR
+  7 A$SpritePlayer$159                                             000037 GR
+  7 A$SpritePlayer$160                                             00003A GR
+  7 A$SpritePlayer$161                                             00003D GR
+  7 A$SpritePlayer$162                                             00003E GR
+  7 A$SpritePlayer$163                                             00003F GR
+  7 A$SpritePlayer$164                                             000040 GR
+  7 A$SpritePlayer$169                                             000043 GR
+  7 A$SpritePlayer$170                                             000046 GR
+  7 A$SpritePlayer$171                                             000048 GR
+  7 A$SpritePlayer$175                                             00004A GR
+  7 A$SpritePlayer$176                                             00004D GR
+  7 A$SpritePlayer$180                                             00004E GR
+  7 A$SpritePlayer$181                                             000050 GR
+  7 A$SpritePlayer$182                                             000051 GR
+  7 A$SpritePlayer$183                                             000052 GR
+  7 A$SpritePlayer$184                                             000055 GR
+  7 A$SpritePlayer$185                                             000058 GR
+  7 A$SpritePlayer$186                                             000059 GR
+  7 A$SpritePlayer$187                                             00005A GR
+  7 A$SpritePlayer$188                                             00005B GR
+  7 A$SpritePlayer$193                                             00005E GR
+  7 A$SpritePlayer$194                                             000061 GR
+  7 A$SpritePlayer$195                                             000062 GR
+  7 A$SpritePlayer$199                                             000064 GR
+  7 A$SpritePlayer$200                                             000067 GR
+  7 A$SpritePlayer$204                                             000068 GR
+  7 A$SpritePlayer$205                                             00006A GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 2
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  7 A$SpritePlayer$206                                             00006B GR
+  7 A$SpritePlayer$207                                             00006C GR
+  7 A$SpritePlayer$208                                             00006F GR
+  7 A$SpritePlayer$209                                             000072 GR
+  7 A$SpritePlayer$210                                             000073 GR
+  7 A$SpritePlayer$211                                             000074 GR
+  7 A$SpritePlayer$212                                             000075 GR
+  7 A$SpritePlayer$217                                             000078 GR
+  7 A$SpritePlayer$218                                             00007B GR
+  7 A$SpritePlayer$219                                             00007C GR
+  7 A$SpritePlayer$223                                             00007E GR
+  7 A$SpritePlayer$224                                             000081 GR
+  7 A$SpritePlayer$228                                             000083 GR
+  7 A$SpritePlayer$229                                             000085 GR
+  7 A$SpritePlayer$230                                             000086 GR
+  7 A$SpritePlayer$231                                             000087 GR
+  7 A$SpritePlayer$232                                             00008A GR
+  7 A$SpritePlayer$233                                             00008D GR
+  7 A$SpritePlayer$234                                             00008E GR
+  7 A$SpritePlayer$235                                             00008F GR
+  7 A$SpritePlayer$236                                             000090 GR
+  7 A$SpritePlayer$241                                             000093 GR
+  7 A$SpritePlayer$242                                             000096 GR
+  7 A$SpritePlayer$243                                             000097 GR
+  7 A$SpritePlayer$244                                             000099 GR
+  7 A$SpritePlayer$245                                             00009B GR
+  7 A$SpritePlayer$246                                             00009D GR
+  7 A$SpritePlayer$251                                             00009E GR
+  7 A$SpritePlayer$252                                             0000A1 GR
+  7 A$SpritePlayer$253                                             0000A2 GR
+  7 A$SpritePlayer$254                                             0000A4 GR
+  7 A$SpritePlayer$255                                             0000A5 GR
+  7 A$SpritePlayer$256                                             0000A6 GR
+  7 A$SpritePlayer$257                                             0000A8 GR
+  7 A$SpritePlayer$258                                             0000AA GR
+  7 A$SpritePlayer$259                                             0000AC GR
+  7 A$SpritePlayer$260                                             0000AE GR
+  7 A$SpritePlayer$261                                             0000AF GR
+  7 A$SpritePlayer$263                                             0000B1 GR
+  7 A$SpritePlayer$264                                             0000B3 GR
+  7 A$SpritePlayer$265                                             0000B5 GR
+  7 A$SpritePlayer$267                                             0000B6 GR
+  7 A$SpritePlayer$268                                             0000B8 GR
+  7 A$SpritePlayer$269                                             0000BB GR
+  7 A$SpritePlayer$274                                             0000BC GR
+  7 A$SpritePlayer$275                                             0000BF GR
+  7 A$SpritePlayer$276                                             0000C0 GR
+  7 A$SpritePlayer$277                                             0000C2 GR
+  7 A$SpritePlayer$278                                             0000C4 GR
+  7 A$SpritePlayer$279                                             0000C6 GR
+  7 A$SpritePlayer$284                                             0000C7 GR
+  7 A$SpritePlayer$285                                             0000CA GR
+  7 A$SpritePlayer$286                                             0000CB GR
+  7 A$SpritePlayer$287                                             0000CD GR
+  7 A$SpritePlayer$288                                             0000CE GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 3
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  7 A$SpritePlayer$289                                             0000CF GR
+  7 A$SpritePlayer$290                                             0000D1 GR
+  7 A$SpritePlayer$291                                             0000D3 GR
+  7 A$SpritePlayer$292                                             0000D5 GR
+  7 A$SpritePlayer$293                                             0000D7 GR
+  7 A$SpritePlayer$294                                             0000D8 GR
+  7 A$SpritePlayer$296                                             0000DA GR
+  7 A$SpritePlayer$297                                             0000DC GR
+  7 A$SpritePlayer$298                                             0000DE GR
+  7 A$SpritePlayer$300                                             0000DF GR
+  7 A$SpritePlayer$301                                             0000E1 GR
+  7 A$SpritePlayer$302                                             0000E4 GR
+  7 A$SpritePlayer$307                                             0000E5 GR
+  7 A$SpritePlayer$308                                             0000E8 GR
+  7 A$SpritePlayer$309                                             0000E9 GR
+  7 A$SpritePlayer$310                                             0000EB GR
+  7 A$SpritePlayer$311                                             0000EE GR
+  7 A$SpritePlayer$316                                             0000EF GR
+  7 A$SpritePlayer$317                                             0000F2 GR
+  7 A$SpritePlayer$318                                             0000F4 GR
+  7 A$SpritePlayer$319                                             0000F5 GR
+  7 A$SpritePlayer$320                                             0000F6 GR
+  7 A$SpritePlayer$321                                             0000F7 GR
+  7 A$SpritePlayer$322                                             0000F8 GR
+  7 A$SpritePlayer$323                                             0000F9 GR
+  7 A$SpritePlayer$324                                             0000FB GR
+  7 A$SpritePlayer$325                                             0000FC GR
+  7 A$SpritePlayer$326                                             0000FE GR
+  7 A$SpritePlayer$327                                             0000FF GR
+  7 A$SpritePlayer$328                                             000101 GR
+  7 A$SpritePlayer$329                                             000103 GR
+  7 A$SpritePlayer$330                                             000105 GR
+  7 A$SpritePlayer$331                                             000107 GR
+  7 A$SpritePlayer$332                                             000109 GR
+  7 A$SpritePlayer$333                                             00010A GR
+  7 A$SpritePlayer$335                                             00010C GR
+  7 A$SpritePlayer$336                                             00010E GR
+  7 A$SpritePlayer$337                                             000110 GR
+  7 A$SpritePlayer$339                                             000111 GR
+  7 A$SpritePlayer$340                                             000113 GR
+  7 A$SpritePlayer$341                                             000116 GR
+  7 A$SpritePlayer$346                                             000118 GR
+  7 A$SpritePlayer$347                                             00011A GR
+  7 A$SpritePlayer$348                                             00011C GR
+  7 A$SpritePlayer$349                                             00011D GR
+  7 A$SpritePlayer$350                                             00011E GR
+  7 A$SpritePlayer$351                                             000120 GR
+  7 A$SpritePlayer$352                                             000121 GR
+  7 A$SpritePlayer$353                                             000123 GR
+  7 A$SpritePlayer$354                                             000124 GR
+  7 A$SpritePlayer$355                                             000126 GR
+  7 A$SpritePlayer$356                                             000128 GR
+  7 A$SpritePlayer$357                                             00012A GR
+  7 A$SpritePlayer$358                                             00012C GR
+  7 A$SpritePlayer$359                                             00012D GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 4
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  7 A$SpritePlayer$361                                             00012F GR
+  7 A$SpritePlayer$362                                             000131 GR
+  7 A$SpritePlayer$363                                             000133 GR
+  7 A$SpritePlayer$365                                             000134 GR
+  7 A$SpritePlayer$366                                             000136 GR
+  7 A$SpritePlayer$367                                             000139 GR
+  7 A$SpritePlayer$372                                             00013B GR
+  7 A$SpritePlayer$373                                             00013E GR
+  7 A$SpritePlayer$374                                             00013F GR
+  7 A$SpritePlayer$375                                             000140 GR
+  7 A$SpritePlayer$376                                             000143 GR
+  7 A$SpritePlayer$377                                             000144 GR
+  7 A$SpritePlayer$378                                             000147 GR
+  7 A$SpritePlayer$379                                             000148 GR
+  7 A$SpritePlayer$380                                             000149 GR
+  7 A$SpritePlayer$381                                             00014A GR
+  7 A$SpritePlayer$384                                             00014B GR
+  7 A$SpritePlayer$385                                             00014C GR
+  7 A$SpritePlayer$386                                             00014F GR
+  7 A$SpritePlayer$387                                             000150 GR
+  7 A$SpritePlayer$388                                             000153 GR
+  7 A$SpritePlayer$389                                             000154 GR
+  7 A$SpritePlayer$390                                             000155 GR
+  7 A$SpritePlayer$391                                             000158 GR
+  7 A$SpritePlayer$392                                             000159 GR
+  7 A$SpritePlayer$393                                             00015A GR
+  7 A$SpritePlayer$397                                             00015B GR
+  7 A$SpritePlayer$398                                             00015E GR
+  7 A$SpritePlayer$403                                             00015F GR
+  7 A$SpritePlayer$417                                             000160 GR
+  7 A$SpritePlayer$82                                              000000 GR
+  7 C$SpritePlayer.c$18$0_0$162                                 =  000000 GR
+  7 C$SpritePlayer.c$20$0_0$162                                 =  000000 GR
+  7 C$SpritePlayer.c$22$0_0$163                                 =  00000B GR
+  7 C$SpritePlayer.c$23$1_0$163                                 =  00000D GR
+  7 C$SpritePlayer.c$24$2_0$164                                 =  000014 GR
+  7 C$SpritePlayer.c$25$2_0$164                                 =  000018 GR
+  7 C$SpritePlayer.c$27$1_0$163                                 =  000028 GR
+  7 C$SpritePlayer.c$28$2_0$165                                 =  00002F GR
+  7 C$SpritePlayer.c$29$2_0$165                                 =  000033 GR
+  7 C$SpritePlayer.c$31$1_0$163                                 =  000043 GR
+  7 C$SpritePlayer.c$32$2_0$166                                 =  00004A GR
+  7 C$SpritePlayer.c$33$2_0$166                                 =  00004E GR
+  7 C$SpritePlayer.c$35$1_0$163                                 =  00005E GR
+  7 C$SpritePlayer.c$36$2_0$167                                 =  000064 GR
+  7 C$SpritePlayer.c$37$2_0$167                                 =  000068 GR
+  7 C$SpritePlayer.c$39$1_0$163                                 =  000078 GR
+  7 C$SpritePlayer.c$40$2_0$168                                 =  00007E GR
+  7 C$SpritePlayer.c$41$2_0$168                                 =  000083 GR
+  7 C$SpritePlayer.c$44$1_0$163                                 =  000093 GR
+  7 C$SpritePlayer.c$45$1_0$163                                 =  00009E GR
+  7 C$SpritePlayer.c$46$1_0$163                                 =  0000BC GR
+  7 C$SpritePlayer.c$47$1_0$163                                 =  0000C7 GR
+  7 C$SpritePlayer.c$49$1_0$163                                 =  0000E5 GR
+  7 C$SpritePlayer.c$50$1_0$163                                 =  0000EF GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 5
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  7 C$SpritePlayer.c$51$1_0$163                                 =  000118 GR
+  7 C$SpritePlayer.c$53$1_0$163                                 =  00013B GR
+  7 C$SpritePlayer.c$54$1_0$163                                 =  00015F GR
+  7 C$SpritePlayer.c$56$1_0$177                                 =  000160 GR
+  8 FSpritePlayer$__xinit_airborne$0_0$0                        =  000002 GR
+  8 FSpritePlayer$__xinit_x_vel$0_0$0                           =  000000 GR
+  8 FSpritePlayer$__xinit_y_vel$0_0$0                           =  000001 GR
+  7 G$Destroy_SpritePlayer$0$0                                  =  000160 GR
+  7 G$Start_SpritePlayer$0$0                                    =  000000 GR
+  7 G$Update_SpritePlayer$0$0                                   =  00000B GR
+    G$__bank_SpritePlayer$0_0$0                                 =  0000FF G
+  2 G$airborne$0_0$0                                            =  000002 GR
+  7 G$anim_idle$0_0$0                                           =  000001 GR
+  7 G$anim_walk$0_0$0                                           =  000004 GR
+  7 G$max_x_vel$0_0$0                                           =  000007 GR
+  7 G$max_y_vel$0_0$0                                           =  000008 GR
+  7 G$min_x_vel$0_0$0                                           =  000009 GR
+  7 G$min_y_vel$0_0$0                                           =  00000A GR
+  2 G$x_vel$0_0$0                                               =  000000 GR
+  2 G$y_vel$0_0$0                                               =  000001 GR
+  7 XG$Destroy_SpritePlayer$0$0                                 =  000160 GR
+  7 XG$Start_SpritePlayer$0$0                                   =  000000 GR
+  7 XG$Update_SpritePlayer$0$0                                  =  00015F GR
+  7 _Destroy_SpritePlayer                                          000160 GR
+    _SetSpriteAnim                                                 ****** GX
+  7 _Start_SpritePlayer                                            000000 GR
+    _THIS                                                          ****** GX
+    _TranslateSprite                                               ****** GX
+  7 _Update_SpritePlayer                                           00000B GR
+    ___bank_SpritePlayer                                        =  0000FF G
+    __divsint                                                      ****** GX
+  8 __xinit__airborne                                              000002 R
+  8 __xinit__x_vel                                                 000000 R
+  8 __xinit__y_vel                                                 000001 R
+  2 _airborne                                                      000002 GR
+  7 _anim_idle                                                     000001 GR
+  7 _anim_walk                                                     000004 GR
+    _keys                                                          ****** GX
+  7 _max_x_vel                                                     000007 GR
+  7 _max_y_vel                                                     000008 GR
+  7 _min_x_vel                                                     000009 GR
+  7 _min_y_vel                                                     00000A GR
+  2 _x_vel                                                         000000 GR
+  2 _y_vel                                                         000001 GR
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 6
+Hexadecimal [24-Bits]
+
+Area Table
+
+   0 _CODE                                      size      0   flags    0
+   1 _DATA                                      size      0   flags    0
+   2 _INITIALIZED                               size      3   flags    0
+   3 _DABS                                      size      0   flags    8
+   4 _HOME                                      size      0   flags    0
+   5 _GSINIT                                    size      0   flags    0
+   6 _GSFINAL                                   size      0   flags    0
+   7 _CODE_255                                  size    161   flags    0
+   8 _INITIALIZER                               size      3   flags    0
+   9 _CABS                                      size      0   flags    8
+

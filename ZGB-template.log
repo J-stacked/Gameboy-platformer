@@ -1,0 +1,4 @@
+﻿  compiling resource ../Debug/res/sprites/player.gbr.c
+  Linking
+  makebin -Z -yo A -yt 1 ../Debug/rom.ihx ../Debug/rom.gb
+  Running ../bin/ZGB_TEMPLATE_Debug.gb

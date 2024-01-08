@@ -1,0 +1,35 @@
+XL3
+H A areas 9 global symbols
+M StateGame
+O -msm83
+S ___bank_StateGame Def000001
+S _scroll_target Ref000000
+S ___bank_map Ref000000
+S _SpriteManagerAdd Ref000000
+S _map Ref000000
+S .__.ABS. Def000000
+S _InitScroll Ref000000
+A _CODE size 0 flags 0 addr 0
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _CODE_1 size 1E flags 0 addr 0
+S _Start_StateGame Def000000
+S _Update_StateGame Def00001D
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 07 00
+T 00 00 00 11 32 00 D5 AF CD 00 00 21 00 00 79 22
+R 00 00 07 00 02 09 03 00 02 0C 01 00
+T 0D 00 00 70 0E 00 00 00 11 00 00 D5 D5 11 00 00
+R 00 00 07 00 0B 05 02 00 02 0E 04 00
+T 18 00 00 79 CD 00 00 C9
+R 00 00 07 00 02 05 06 00
+T 1D 00 00
+R 00 00 07 00
+T 1D 00 00 C9
+R 00 00 07 00

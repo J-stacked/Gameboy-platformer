@@ -1,0 +1,40 @@
+XL3
+H A areas 6 global symbols
+M tiles_gbr
+O -msm83
+S .__.ABS. Def000000
+S ___bank_tiles Def0000FF
+A _CODE size 0 flags 0 addr 0
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _CODE_255 size 32 flags 0 addr 0
+S _tiles_tiles Def00000A
+S _tiles Def00002A
+S _tiles_palettes Def000000
+S _tilesCGB Def000008
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 07 00
+T 00 00 00 BC 17 E7 22 C4 19 E0 14
+R 00 00 07 00
+T 08 00 00
+R 00 00 07 00
+T 08 00 00 00 00
+R 00 00 07 00
+T 0A 00 00
+R 00 00 07 00
+T 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+R 00 00 07 00
+T 17 00 00 00 00 00 CF 20 C3 20 00 FF FB 04 F9 04
+R 00 00 07 00
+T 24 00 00 78 04 00 FF DF 20
+R 00 00 07 00
+T 2A 00 00
+R 00 00 07 00
+T 2A 00 00 02 0A 00 01 00 00 08 00
+R 00 00 07 00 00 04 07 00 00 07 07 00 00 09 07 00

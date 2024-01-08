@@ -1,0 +1,52 @@
+XL3
+H A areas 8 global symbols
+M player_gbr
+O -msm83
+S .__.ABS. Def000000
+S ___bank_player Def0000FF
+A _CODE size 0 flags 0 addr 0
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _CODE_255 size 61 flags 0 addr 0
+S _player_tiles Def000008
+S _player Def000056
+S _player_palettes Def000000
+S ___func_player Def000000
+S _player_metasprite0 Def000048
+S _player_metasprites Def000054
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 07 00
+T 00 00 00
+R 00 00 07 00
+T 00 00 00 BC 17 E7 22 C4 19 E0 14
+R 00 00 07 00
+T 08 00 00
+R 00 00 07 00
+T 08 00 00 1F 1F 20 3F 2F 30 2F 30 2F 30 2F 30 2F
+R 00 00 07 00
+T 15 00 00 30 2F 30 20 3F 24 3F 2E 3F 24 3F 20 3F
+R 00 00 07 00
+T 22 00 00 26 3F 20 3F 1F 1F F8 F8 04 FC F4 0C F4
+R 00 00 07 00
+T 2F 00 00 0C F4 0C F4 0C F4 0C F4 0C 04 FC 04 FC
+R 00 00 07 00
+T 3C 00 00 14 FC 44 FC 04 FC C4 FC 04 FC F8 F8
+R 00 00 07 00
+T 48 00 00
+R 00 00 07 00
+T 48 00 00 00 00 00 00 00 08 02 00 80 00 00 00
+R 00 00 07 00
+T 54 00 00
+R 00 00 07 00
+T 54 00 00 48 00
+R 00 00 07 00 00 03 07 00
+T 56 00 00
+R 00 00 07 00
+T 56 00 00 10 10 04 08 00 01 00 00 01 54 00
+R 00 00 07 00 00 06 07 00 00 09 07 00 00 0C 07 00

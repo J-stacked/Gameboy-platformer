@@ -1,0 +1,429 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ISO C Compiler 
+                                      3 ; Version 4.3.2 #14228 (MINGW32)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module SpritePlayer
+                                      6 	.optsdcc -msm83
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _Destroy_SpritePlayer
+                                     12 	.globl _Update_SpritePlayer
+                                     13 	.globl _Start_SpritePlayer
+                                     14 	.globl _TranslateSprite
+                                     15 	.globl _SetSpriteAnim
+                                     16 	.globl _airborne
+                                     17 	.globl _y_vel
+                                     18 	.globl _x_vel
+                                     19 	.globl _min_y_vel
+                                     20 	.globl _min_x_vel
+                                     21 	.globl _max_y_vel
+                                     22 	.globl _max_x_vel
+                                     23 	.globl _anim_walk
+                                     24 	.globl _anim_idle
+                                     25 	.globl ___bank_SpritePlayer
+                                     26 ;--------------------------------------------------------
+                                     27 ; special function registers
+                                     28 ;--------------------------------------------------------
+                                     29 ;--------------------------------------------------------
+                                     30 ; ram data
+                                     31 ;--------------------------------------------------------
+                                     32 	.area _DATA
+                                     33 ;--------------------------------------------------------
+                                     34 ; ram data
+                                     35 ;--------------------------------------------------------
+                                     36 	.area _INITIALIZED
+                           000000    37 G$x_vel$0_0$0==.
+      000000                         38 _x_vel::
+      000000                         39 	.ds 1
+                           000001    40 G$y_vel$0_0$0==.
+      000001                         41 _y_vel::
+      000001                         42 	.ds 1
+                           000002    43 G$airborne$0_0$0==.
+      000002                         44 _airborne::
+      000002                         45 	.ds 1
+                                     46 ;--------------------------------------------------------
+                                     47 ; absolute external ram data
+                                     48 ;--------------------------------------------------------
+                                     49 	.area _DABS (ABS)
+                                     50 ;--------------------------------------------------------
+                                     51 ; global & static initialisations
+                                     52 ;--------------------------------------------------------
+                                     53 	.area _HOME
+                                     54 	.area _GSINIT
+                                     55 	.area _GSFINAL
+                                     56 	.area _GSINIT
+                                     57 ;--------------------------------------------------------
+                                     58 ; Home
+                                     59 ;--------------------------------------------------------
+                                     60 	.area _HOME
+                                     61 	.area _HOME
+                                     62 ;--------------------------------------------------------
+                                     63 ; code
+                                     64 ;--------------------------------------------------------
+                                     65 	.area _CODE_255
+                           000000    66 	G$Start_SpritePlayer$0$0	= .
+                                     67 	.globl	G$Start_SpritePlayer$0$0
+                           000000    68 	C$SpritePlayer.c$18$0_0$162	= .
+                                     69 	.globl	C$SpritePlayer.c$18$0_0$162
+                                     70 ;SpritePlayer.c:18: void START() {
+                                     71 ;	---------------------------------
+                                     72 ; Function Start_SpritePlayer
+                                     73 ; ---------------------------------
+      000000                         74 _Start_SpritePlayer::
+                           000000    75 	C$SpritePlayer.c$20$0_0$162	= .
+                                     76 	.globl	C$SpritePlayer.c$20$0_0$162
+                                     77 ;SpritePlayer.c:20: }
+                           000000    78 	C$SpritePlayer.c$20$0_0$162	= .
+                                     79 	.globl	C$SpritePlayer.c$20$0_0$162
+                           000000    80 	XG$Start_SpritePlayer$0$0	= .
+                                     81 	.globl	XG$Start_SpritePlayer$0$0
+      000000 C9               [16]   82 	ret
+                           0000FF    83 G$__bank_SpritePlayer$0_0$0 == 0x00ff
+                           0000FF    84 ___bank_SpritePlayer	=	0x00ff
+                           000001    85 G$anim_idle$0_0$0 == .
+      000001                         86 _anim_idle:
+      000001 02                      87 	.db #0x02	; 2
+      000002 00                      88 	.db #0x00	; 0
+      000003 01                      89 	.db #0x01	; 1
+                           000004    90 G$anim_walk$0_0$0 == .
+      000004                         91 _anim_walk:
+      000004 02                      92 	.db #0x02	; 2
+      000005 00                      93 	.db #0x00	; 0
+      000006 02                      94 	.db #0x02	; 2
+                           000007    95 G$max_x_vel$0_0$0 == .
+      000007                         96 _max_x_vel:
+      000007 0A                      97 	.db #0x0a	;  10
+                           000008    98 G$max_y_vel$0_0$0 == .
+      000008                         99 _max_y_vel:
+      000008 0A                     100 	.db #0x0a	;  10
+                           000009   101 G$min_x_vel$0_0$0 == .
+      000009                        102 _min_x_vel:
+      000009 F6                     103 	.db #0xf6	; -10
+                           00000A   104 G$min_y_vel$0_0$0 == .
+      00000A                        105 _min_y_vel:
+      00000A F6                     106 	.db #0xf6	; -10
+                           00000B   107 	G$Update_SpritePlayer$0$0	= .
+                                    108 	.globl	G$Update_SpritePlayer$0$0
+                           00000B   109 	C$SpritePlayer.c$22$0_0$163	= .
+                                    110 	.globl	C$SpritePlayer.c$22$0_0$163
+                                    111 ;SpritePlayer.c:22: void UPDATE() {
+                                    112 ;	---------------------------------
+                                    113 ; Function Update_SpritePlayer
+                                    114 ; ---------------------------------
+      00000B                        115 _Update_SpritePlayer::
+      00000B 3B               [ 8]  116 	dec	sp
+      00000C 3B               [ 8]  117 	dec	sp
+                           00000D   118 	C$SpritePlayer.c$23$1_0$163	= .
+                                    119 	.globl	C$SpritePlayer.c$23$1_0$163
+                                    120 ;SpritePlayer.c:23: if (KEY_PRESSED(J_UP)) {
+      00000D FAr00r00         [16]  121 	ld	a, (#_keys)
+      000010 CB 57            [ 8]  122 	bit	2, a
+      000012 28 14            [12]  123 	jr	Z, 00102$
+                           000014   124 	C$SpritePlayer.c$24$2_0$164	= .
+                                    125 	.globl	C$SpritePlayer.c$24$2_0$164
+                                    126 ;SpritePlayer.c:24: y_vel -= 1;
+      000014 21r01r00         [12]  127 	ld	hl, #_y_vel
+      000017 35               [12]  128 	dec	(hl)
+                           000018   129 	C$SpritePlayer.c$25$2_0$164	= .
+                                    130 	.globl	C$SpritePlayer.c$25$2_0$164
+                                    131 ;SpritePlayer.c:25: SetSpriteAnim(THIS, anim_walk, 15);
+      000018 3E 0F            [ 8]  132 	ld	a, #0x0f
+      00001A F5               [16]  133 	push	af
+      00001B 33               [ 8]  134 	inc	sp
+      00001C 01r04r00         [12]  135 	ld	bc, #_anim_walk
+      00001F 21r00r00         [12]  136 	ld	hl, #_THIS
+      000022 2A               [ 8]  137 	ld	a, (hl+)
+      000023 5F               [ 4]  138 	ld	e, a
+      000024 56               [ 8]  139 	ld	d, (hl)
+      000025 CDr00r00         [24]  140 	call	_SetSpriteAnim
+      000028                        141 00102$:
+                           000028   142 	C$SpritePlayer.c$27$1_0$163	= .
+                                    143 	.globl	C$SpritePlayer.c$27$1_0$163
+                                    144 ;SpritePlayer.c:27: if (KEY_PRESSED(J_DOWN)) {
+      000028 FAr00r00         [16]  145 	ld	a, (#_keys)
+      00002B CB 5F            [ 8]  146 	bit	3, a
+      00002D 28 14            [12]  147 	jr	Z, 00104$
+                           00002F   148 	C$SpritePlayer.c$28$2_0$165	= .
+                                    149 	.globl	C$SpritePlayer.c$28$2_0$165
+                                    150 ;SpritePlayer.c:28: y_vel += 1;
+      00002F 21r01r00         [12]  151 	ld	hl, #_y_vel
+      000032 34               [12]  152 	inc	(hl)
+                           000033   153 	C$SpritePlayer.c$29$2_0$165	= .
+                                    154 	.globl	C$SpritePlayer.c$29$2_0$165
+                                    155 ;SpritePlayer.c:29: SetSpriteAnim(THIS, anim_walk, 15);
+      000033 3E 0F            [ 8]  156 	ld	a, #0x0f
+      000035 F5               [16]  157 	push	af
+      000036 33               [ 8]  158 	inc	sp
+      000037 01r04r00         [12]  159 	ld	bc, #_anim_walk
+      00003A 21r00r00         [12]  160 	ld	hl, #_THIS
+      00003D 2A               [ 8]  161 	ld	a, (hl+)
+      00003E 5F               [ 4]  162 	ld	e, a
+      00003F 56               [ 8]  163 	ld	d, (hl)
+      000040 CDr00r00         [24]  164 	call	_SetSpriteAnim
+      000043                        165 00104$:
+                           000043   166 	C$SpritePlayer.c$31$1_0$163	= .
+                                    167 	.globl	C$SpritePlayer.c$31$1_0$163
+                                    168 ;SpritePlayer.c:31: if (KEY_PRESSED(J_LEFT)) {
+      000043 FAr00r00         [16]  169 	ld	a, (#_keys)
+      000046 CB 4F            [ 8]  170 	bit	1, a
+      000048 28 14            [12]  171 	jr	Z, 00106$
+                           00004A   172 	C$SpritePlayer.c$32$2_0$166	= .
+                                    173 	.globl	C$SpritePlayer.c$32$2_0$166
+                                    174 ;SpritePlayer.c:32: x_vel -= 1;
+      00004A 21r00r00         [12]  175 	ld	hl, #_x_vel
+      00004D 35               [12]  176 	dec	(hl)
+                           00004E   177 	C$SpritePlayer.c$33$2_0$166	= .
+                                    178 	.globl	C$SpritePlayer.c$33$2_0$166
+                                    179 ;SpritePlayer.c:33: SetSpriteAnim(THIS, anim_walk, 15);
+      00004E 3E 0F            [ 8]  180 	ld	a, #0x0f
+      000050 F5               [16]  181 	push	af
+      000051 33               [ 8]  182 	inc	sp
+      000052 01r04r00         [12]  183 	ld	bc, #_anim_walk
+      000055 21r00r00         [12]  184 	ld	hl, #_THIS
+      000058 2A               [ 8]  185 	ld	a, (hl+)
+      000059 5F               [ 4]  186 	ld	e, a
+      00005A 56               [ 8]  187 	ld	d, (hl)
+      00005B CDr00r00         [24]  188 	call	_SetSpriteAnim
+      00005E                        189 00106$:
+                           00005E   190 	C$SpritePlayer.c$35$1_0$163	= .
+                                    191 	.globl	C$SpritePlayer.c$35$1_0$163
+                                    192 ;SpritePlayer.c:35: if (KEY_PRESSED(J_RIGHT)) {
+      00005E FAr00r00         [16]  193 	ld	a, (#_keys)
+      000061 0F               [ 4]  194 	rrca
+      000062 30 14            [12]  195 	jr	NC, 00108$
+                           000064   196 	C$SpritePlayer.c$36$2_0$167	= .
+                                    197 	.globl	C$SpritePlayer.c$36$2_0$167
+                                    198 ;SpritePlayer.c:36: x_vel += 1;
+      000064 21r00r00         [12]  199 	ld	hl, #_x_vel
+      000067 34               [12]  200 	inc	(hl)
+                           000068   201 	C$SpritePlayer.c$37$2_0$167	= .
+                                    202 	.globl	C$SpritePlayer.c$37$2_0$167
+                                    203 ;SpritePlayer.c:37: SetSpriteAnim(THIS, anim_walk, 15);
+      000068 3E 0F            [ 8]  204 	ld	a, #0x0f
+      00006A F5               [16]  205 	push	af
+      00006B 33               [ 8]  206 	inc	sp
+      00006C 01r04r00         [12]  207 	ld	bc, #_anim_walk
+      00006F 21r00r00         [12]  208 	ld	hl, #_THIS
+      000072 2A               [ 8]  209 	ld	a, (hl+)
+      000073 5F               [ 4]  210 	ld	e, a
+      000074 56               [ 8]  211 	ld	d, (hl)
+      000075 CDr00r00         [24]  212 	call	_SetSpriteAnim
+      000078                        213 00108$:
+                           000078   214 	C$SpritePlayer.c$39$1_0$163	= .
+                                    215 	.globl	C$SpritePlayer.c$39$1_0$163
+                                    216 ;SpritePlayer.c:39: if (keys == 0) {
+      000078 FAr00r00         [16]  217 	ld	a, (#_keys)
+      00007B B7               [ 4]  218 	or	a, a
+      00007C 20 15            [12]  219 	jr	NZ, 00110$
+                           00007E   220 	C$SpritePlayer.c$40$2_0$168	= .
+                                    221 	.globl	C$SpritePlayer.c$40$2_0$168
+                                    222 ;SpritePlayer.c:40: x_vel = 0;
+      00007E 21r00r00         [12]  223 	ld	hl, #_x_vel
+      000081 36 00            [12]  224 	ld	(hl), #0x00
+                           000083   225 	C$SpritePlayer.c$41$2_0$168	= .
+                                    226 	.globl	C$SpritePlayer.c$41$2_0$168
+                                    227 ;SpritePlayer.c:41: SetSpriteAnim(THIS, anim_idle, 15);
+      000083 3E 0F            [ 8]  228 	ld	a, #0x0f
+      000085 F5               [16]  229 	push	af
+      000086 33               [ 8]  230 	inc	sp
+      000087 01r01r00         [12]  231 	ld	bc, #_anim_idle
+      00008A 21r00r00         [12]  232 	ld	hl, #_THIS
+      00008D 2A               [ 8]  233 	ld	a, (hl+)
+      00008E 5F               [ 4]  234 	ld	e, a
+      00008F 56               [ 8]  235 	ld	d, (hl)
+      000090 CDr00r00         [24]  236 	call	_SetSpriteAnim
+      000093                        237 00110$:
+                           000093   238 	C$SpritePlayer.c$44$1_0$163	= .
+                                    239 	.globl	C$SpritePlayer.c$44$1_0$163
+                                    240 ;SpritePlayer.c:44: if (x_vel < min_x_vel) { x_vel += 1; }
+      000093 21r00r00         [12]  241 	ld	hl, #_x_vel
+      000096 7E               [ 8]  242 	ld	a, (hl)
+      000097 EE 80            [ 8]  243 	xor	a, #0x80
+      000099 D6 76            [ 8]  244 	sub	a, #0x76
+      00009B 30 01            [12]  245 	jr	NC, 00112$
+      00009D 34               [12]  246 	inc	(hl)
+      00009E                        247 00112$:
+                           00009E   248 	C$SpritePlayer.c$45$1_0$163	= .
+                                    249 	.globl	C$SpritePlayer.c$45$1_0$163
+                                    250 ;SpritePlayer.c:45: if (x_vel > max_x_vel) { x_vel -= 1; }
+      00009E 21r00r00         [12]  251 	ld	hl, #_x_vel
+      0000A1 5E               [ 8]  252 	ld	e, (hl)
+      0000A2 3E 0A            [ 8]  253 	ld	a,#0x0a
+      0000A4 57               [ 4]  254 	ld	d,a
+      0000A5 96               [ 8]  255 	sub	a, (hl)
+      0000A6 CB 7B            [ 8]  256 	bit	7, e
+      0000A8 28 07            [12]  257 	jr	Z, 00215$
+      0000AA CB 7A            [ 8]  258 	bit	7, d
+      0000AC 20 08            [12]  259 	jr	NZ, 00216$
+      0000AE BF               [ 4]  260 	cp	a, a
+      0000AF 18 05            [12]  261 	jr	00216$
+      0000B1                        262 00215$:
+      0000B1 CB 7A            [ 8]  263 	bit	7, d
+      0000B3 28 01            [12]  264 	jr	Z, 00216$
+      0000B5 37               [ 4]  265 	scf
+      0000B6                        266 00216$:
+      0000B6 30 04            [12]  267 	jr	NC, 00114$
+      0000B8 21r00r00         [12]  268 	ld	hl, #_x_vel
+      0000BB 35               [12]  269 	dec	(hl)
+      0000BC                        270 00114$:
+                           0000BC   271 	C$SpritePlayer.c$46$1_0$163	= .
+                                    272 	.globl	C$SpritePlayer.c$46$1_0$163
+                                    273 ;SpritePlayer.c:46: if (y_vel < min_y_vel) { y_vel += 1; }
+      0000BC 21r01r00         [12]  274 	ld	hl, #_y_vel
+      0000BF 7E               [ 8]  275 	ld	a, (hl)
+      0000C0 EE 80            [ 8]  276 	xor	a, #0x80
+      0000C2 D6 76            [ 8]  277 	sub	a, #0x76
+      0000C4 30 01            [12]  278 	jr	NC, 00116$
+      0000C6 34               [12]  279 	inc	(hl)
+      0000C7                        280 00116$:
+                           0000C7   281 	C$SpritePlayer.c$47$1_0$163	= .
+                                    282 	.globl	C$SpritePlayer.c$47$1_0$163
+                                    283 ;SpritePlayer.c:47: if (y_vel > max_y_vel) { y_vel -= 1; }
+      0000C7 21r01r00         [12]  284 	ld	hl, #_y_vel
+      0000CA 5E               [ 8]  285 	ld	e, (hl)
+      0000CB 3E 0A            [ 8]  286 	ld	a,#0x0a
+      0000CD 57               [ 4]  287 	ld	d,a
+      0000CE 96               [ 8]  288 	sub	a, (hl)
+      0000CF CB 7B            [ 8]  289 	bit	7, e
+      0000D1 28 07            [12]  290 	jr	Z, 00217$
+      0000D3 CB 7A            [ 8]  291 	bit	7, d
+      0000D5 20 08            [12]  292 	jr	NZ, 00218$
+      0000D7 BF               [ 4]  293 	cp	a, a
+      0000D8 18 05            [12]  294 	jr	00218$
+      0000DA                        295 00217$:
+      0000DA CB 7A            [ 8]  296 	bit	7, d
+      0000DC 28 01            [12]  297 	jr	Z, 00218$
+      0000DE 37               [ 4]  298 	scf
+      0000DF                        299 00218$:
+      0000DF 30 04            [12]  300 	jr	NC, 00118$
+      0000E1 21r01r00         [12]  301 	ld	hl, #_y_vel
+      0000E4 35               [12]  302 	dec	(hl)
+      0000E5                        303 00118$:
+                           0000E5   304 	C$SpritePlayer.c$49$1_0$163	= .
+                                    305 	.globl	C$SpritePlayer.c$49$1_0$163
+                                    306 ;SpritePlayer.c:49: if (airborne) { y_vel += 1; }
+      0000E5 FAr02r00         [16]  307 	ld	a, (#_airborne)
+      0000E8 B7               [ 4]  308 	or	a, a
+      0000E9 28 04            [12]  309 	jr	Z, 00120$
+      0000EB 21r01r00         [12]  310 	ld	hl, #_y_vel
+      0000EE 34               [12]  311 	inc	(hl)
+      0000EF                        312 00120$:
+                           0000EF   313 	C$SpritePlayer.c$50$1_0$163	= .
+                                    314 	.globl	C$SpritePlayer.c$50$1_0$163
+                                    315 ;SpritePlayer.c:50: if (y_vel < min_y_vel+2) { airborne = 1; }
+      0000EF FAr01r00         [16]  316 	ld	a, (#_y_vel)
+      0000F2 F8 00            [12]  317 	ldhl	sp,	#0
+      0000F4 22               [ 8]  318 	ld	(hl+), a
+      0000F5 07               [ 4]  319 	rlca
+      0000F6 9F               [ 4]  320 	sbc	a, a
+      0000F7 32               [ 8]  321 	ld	(hl-), a
+      0000F8 2A               [ 8]  322 	ld	a, (hl+)
+      0000F9 D6 F8            [ 8]  323 	sub	a, #0xf8
+      0000FB 7E               [ 8]  324 	ld	a, (hl)
+      0000FC DE FF            [ 8]  325 	sbc	a, #0xff
+      0000FE 56               [ 8]  326 	ld	d, (hl)
+      0000FF 3E FF            [ 8]  327 	ld	a, #0xff
+      000101 CB 7F            [ 8]  328 	bit	7,a
+      000103 28 07            [12]  329 	jr	Z, 00219$
+      000105 CB 7A            [ 8]  330 	bit	7, d
+      000107 20 08            [12]  331 	jr	NZ, 00220$
+      000109 BF               [ 4]  332 	cp	a, a
+      00010A 18 05            [12]  333 	jr	00220$
+      00010C                        334 00219$:
+      00010C CB 7A            [ 8]  335 	bit	7, d
+      00010E 28 01            [12]  336 	jr	Z, 00220$
+      000110 37               [ 4]  337 	scf
+      000111                        338 00220$:
+      000111 30 05            [12]  339 	jr	NC, 00122$
+      000113 21r02r00         [12]  340 	ld	hl, #_airborne
+      000116 36 01            [12]  341 	ld	(hl), #0x01
+      000118                        342 00122$:
+                           000118   343 	C$SpritePlayer.c$51$1_0$163	= .
+                                    344 	.globl	C$SpritePlayer.c$51$1_0$163
+                                    345 ;SpritePlayer.c:51: if (y_vel > max_y_vel-2) { airborne = 0; }
+      000118 F8 00            [12]  346 	ldhl	sp,	#0
+      00011A 3E 08            [ 8]  347 	ld	a, #0x08
+      00011C 96               [ 8]  348 	sub	a, (hl)
+      00011D 23               [ 8]  349 	inc	hl
+      00011E 3E 00            [ 8]  350 	ld	a, #0x00
+      000120 9E               [ 8]  351 	sbc	a, (hl)
+      000121 3E 00            [ 8]  352 	ld	a, #0x00
+      000123 57               [ 4]  353 	ld	d, a
+      000124 CB 7E            [12]  354 	bit	7, (hl)
+      000126 28 07            [12]  355 	jr	Z, 00221$
+      000128 CB 7A            [ 8]  356 	bit	7, d
+      00012A 20 08            [12]  357 	jr	NZ, 00222$
+      00012C BF               [ 4]  358 	cp	a, a
+      00012D 18 05            [12]  359 	jr	00222$
+      00012F                        360 00221$:
+      00012F CB 7A            [ 8]  361 	bit	7, d
+      000131 28 01            [12]  362 	jr	Z, 00222$
+      000133 37               [ 4]  363 	scf
+      000134                        364 00222$:
+      000134 30 05            [12]  365 	jr	NC, 00124$
+      000136 21r02r00         [12]  366 	ld	hl, #_airborne
+      000139 36 00            [12]  367 	ld	(hl), #0x00
+      00013B                        368 00124$:
+                           00013B   369 	C$SpritePlayer.c$53$1_0$163	= .
+                                    370 	.globl	C$SpritePlayer.c$53$1_0$163
+                                    371 ;SpritePlayer.c:53: TranslateSprite(THIS, x_vel / 5, y_vel / 5);
+      00013B 01 05 00         [12]  372 	ld	bc, #0x0005
+      00013E D1               [12]  373 	pop	de
+      00013F D5               [16]  374 	push	de
+      000140 CDr00r00         [24]  375 	call	__divsint
+      000143 51               [ 4]  376 	ld	d, c
+      000144 FAr00r00         [16]  377 	ld	a, (#_x_vel)
+      000147 5F               [ 4]  378 	ld	e, a
+      000148 07               [ 4]  379 	rlca
+      000149 9F               [ 4]  380 	sbc	a, a
+      00014A 6F               [ 4]  381 	ld	l, a
+                                    382 ;	spillPairReg hl
+                                    383 ;	spillPairReg hl
+      00014B D5               [16]  384 	push	de
+      00014C 01 05 00         [12]  385 	ld	bc, #0x0005
+      00014F 55               [ 4]  386 	ld	d, l
+      000150 CDr00r00         [24]  387 	call	__divsint
+      000153 33               [ 8]  388 	inc	sp
+      000154 79               [ 4]  389 	ld	a, c
+      000155 21r00r00         [12]  390 	ld	hl, #_THIS
+      000158 5E               [ 8]  391 	ld	e, (hl)
+      000159 23               [ 8]  392 	inc	hl
+      00015A 56               [ 8]  393 	ld	d, (hl)
+                           00015B   394 	C$SpritePlayer.c$54$1_0$163	= .
+                                    395 	.globl	C$SpritePlayer.c$54$1_0$163
+                                    396 ;SpritePlayer.c:54: }
+      00015B CDr00r00         [24]  397 	call	_TranslateSprite
+      00015E E1               [12]  398 	pop	hl
+                           00015F   399 	C$SpritePlayer.c$54$1_0$163	= .
+                                    400 	.globl	C$SpritePlayer.c$54$1_0$163
+                           00015F   401 	XG$Update_SpritePlayer$0$0	= .
+                                    402 	.globl	XG$Update_SpritePlayer$0$0
+      00015F C9               [16]  403 	ret
+                           000160   404 	G$Destroy_SpritePlayer$0$0	= .
+                                    405 	.globl	G$Destroy_SpritePlayer$0$0
+                           000160   406 	C$SpritePlayer.c$56$1_0$177	= .
+                                    407 	.globl	C$SpritePlayer.c$56$1_0$177
+                                    408 ;SpritePlayer.c:56: void DESTROY() { }
+                                    409 ;	---------------------------------
+                                    410 ; Function Destroy_SpritePlayer
+                                    411 ; ---------------------------------
+      000160                        412 _Destroy_SpritePlayer::
+                           000160   413 	C$SpritePlayer.c$56$1_0$177	= .
+                                    414 	.globl	C$SpritePlayer.c$56$1_0$177
+                           000160   415 	XG$Destroy_SpritePlayer$0$0	= .
+                                    416 	.globl	XG$Destroy_SpritePlayer$0$0
+      000160 C9               [16]  417 	ret
+                                    418 	.area _CODE_255
+                                    419 	.area _INITIALIZER
+                           000000   420 FSpritePlayer$__xinit_x_vel$0_0$0 == .
+      000000                        421 __xinit__x_vel:
+      000000 00                     422 	.db #0x00	;  0
+                           000001   423 FSpritePlayer$__xinit_y_vel$0_0$0 == .
+      000001                        424 __xinit__y_vel:
+      000001 00                     425 	.db #0x00	;  0
+                           000002   426 FSpritePlayer$__xinit_airborne$0_0$0 == .
+      000002                        427 __xinit__airborne:
+      000002 00                     428 	.db #0x00	;  0
+                                    429 	.area _CABS (ABS)
